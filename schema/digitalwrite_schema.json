@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "AREST_digitalWrite",
+	"type": "object",
+	"properties":{
+		"function":"digitalWrite",
+		"pin":{"type":"number"},
+		"variable":{
+			"type":"string",
+			"$comment": "This must be an existing BINARY variable"
+		}
+	},
+	"required":["function","pin","variable"]
+}

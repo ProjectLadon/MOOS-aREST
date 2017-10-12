@@ -1,0 +1,16 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "AREST_analogRead",
+	"type": "object",
+	"properties":{
+		"function":"analogRead",
+		"pin":{"type":"number"},
+		"variable":{
+			"type":"string",
+			"$comment": "This must be a free variable name; it will be published as a DOUBLE"
+		},
+		"offset":{"type":"integer"},
+		"gain":{"type":"number"}
+	},
+	"required":["function","pin","variable"]
+}

@@ -1,0 +1,15 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "AREST_variable",
+	"type": "object",
+	"properties":{
+		"function":"variable",
+		"name":{"type":"string"},
+		"variableType":{"type":"string","enum":["STRING","DOUBLE"]},
+		"variable":{
+			"type":"string",
+			"$comment": "This must be a free variable name; it will be published as a DOUBLE"
+		}
+	},
+	"required":["function","name","variable","variableType"]
+}

@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "AREST_digitalRead",
+	"type": "object",
+	"properties":{
+		"function":"digitalRead",
+		"pin":{"type":"number"},
+		"variable":{
+			"type":"string",
+			"$comment": "This must be a free variable name; it will be published as a BINARY"
+		}
+	},
+	"required":["function","pin","variable"]
+}

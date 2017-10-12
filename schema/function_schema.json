@@ -1,0 +1,27 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"id": "AREST_function",
+	"type": "object",
+	"properties":{
+		"function":"function",
+		"name":{"type":"string"},
+		"parameters":{
+			"type":"array",
+			"items":{
+				"type": "object",
+				"properties": {
+					"name": {"type":"string"},
+					"inputVariable": {"type":"string"},
+					"inputVariableType": {"type": "string", "enum":["DOUBLE", "STRING", "BINARY"]} 
+				},
+				"required":["name", "inputVariable", "inputVariableType"]
+			}
+		},
+		"returnType":{"type":"string","enum":["STRING","DOUBLE"]},
+		"returnVariable":{
+			"type":"string",
+			"$comment": "This must be a free variable name; it will be published as a DOUBLE"
+		}
+	},
+	"required":["function","name"]
+}
