@@ -1,7 +1,12 @@
-# MOOS-aREST
+# MOOS-paREST
 A connector between MOOS and aREST running on Arduino satellite nodes. It provides a direct linkage between aREST endpoints and MOOS variables.
 
-# Configuration Options
+## Dependencies
+* MOOS-IvP
+* https://github.com/Tencent/rapidjson/ -- provides JSON parse/deparse
+* https://curl.haxx.se/libcurl/ -- provides HTTP client interface
+
+## Configuration Options
 * interface -- defines the aRest interface to be used, according to the following schema:
 ```
 {
