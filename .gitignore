@@ -30,3 +30,17 @@
 *.exe
 *.out
 *.app
+
+# Generated headerfiles
+schema/*.h
+
+# CMake & executables
+cmake_install.cmake
+Makefile
+CMakeCache.txt
+CMakeFiles
+pGPSd
+
+# MOOS log files
+examples/.LastOpenedMOOSLogDirectory
+examples/MOOSLog*

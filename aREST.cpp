@@ -9,6 +9,16 @@
 #include "MBUtils.h"
 #include "ACTable.h"
 #include "aREST.h"
+#include "rapidjson.h"
+
+// Include the schemas
+#include "schema/analogread_schema.h"
+#include "schema/digitalread_schema.h"
+#include "schema/function_schema.h"
+#include "schema/variable_schema.h"
+#include "schema/analogwrite_schema.h"
+#include "schema/digitalwrite_schema.h"
+#include "schema/interface_schema.h"
 
 using namespace std;
 
