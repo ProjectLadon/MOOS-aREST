@@ -1,0 +1,9 @@
+//------------------------------------------------
+// paREST config block
+
+ProcessConfig = paREST
+{
+   AppTick   = 4
+   CommsTick = 4
+}
+
