@@ -82,7 +82,7 @@ A connector between MOOS and aREST running on Arduino satellite nodes. It provid
 	"required":["function","pin","variable"]
 }
 ```
-* analogRead -- read a given analog pin and publish the result on MOOSDB as a DOUBLE, as defined by the following JSON schema:
+* analogRead -- read a given analog pin and publish the result on MOOSDB as a DOUBLE, as defined by the following JSON schema. Note that the offset value (if present) will be added to the received value and the result will be multiplied by the gain (if present) prior to publication.
 ```
 {
 	"$schema": "http://json-schema.org/schema#",
@@ -101,7 +101,7 @@ A connector between MOOS and aREST running on Arduino satellite nodes. It provid
 	"required":["function","pin","variable"]
 }
 ```
-* analogWrite -- write from a given MOOSDB DOUBLE variable to a given analog pin, as defined by the following JSON schema:
+* analogWrite -- write from a given MOOSDB DOUBLE variable to a given analog pin, as defined by the following JSON schema. Note that the offset value (if present) will be added to the received value and the result will be multiplied by the gain (if present) prior to transmission.
 ```
 {
 	"$schema": "http://json-schema.org/schema#",
@@ -170,7 +170,8 @@ A connector between MOOS and aREST running on Arduino satellite nodes. It provid
 	"required":["function","name"]
 }
 ``` 
-* confFile -- path to a configuration file with any combination of other objects. 
-* digitalPollPeriod -- polling period for digitalRead items, in microseconds. 
-* analogPollPeriod -- polling period for analogRead items, in microseconds. 
-* variablePollPeriod -- polling period for variable items, in microseconds.
+* confFile -- path to a configuration file with any combination of other objects. The contents of the file must be a single JSON array of objects conforming to one of the previous schemas. 
+* digitalPollPeriod -- polling period for digitalRead items, in frames. 
+* analogPollPeriod -- polling period for analogRead items, in frames. 
+* variablePollPeriod -- polling period for variable items, in frames.
+
