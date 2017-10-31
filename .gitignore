@@ -39,7 +39,7 @@ cmake_install.cmake
 Makefile
 CMakeCache.txt
 CMakeFiles
-pGPSd
+paREST
 
 # MOOS log files
 examples/.LastOpenedMOOSLogDirectory
