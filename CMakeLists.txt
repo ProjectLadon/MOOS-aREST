@@ -8,15 +8,8 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 SET(XXD
   /usr/bin/xxd)
 
-# This turns schema files into header files
-function(add_schema_headers INFILE OUTFILE)
-  add_custom_command(
-    OUTPUT ${OUTFILE}
-    COMMAND "${XXD}" -i "${INFILE}" "{OUTFILE}"
-    DEPENDS "${INFILE}"
-    MESSAGE(STATUS, "Running xxd")
-    COMMENT "Generating header file from schema ${INFILE}")
-endfunction(add_schema_headers)
+SET(SH
+	/bin/sh)
 
 # List of schema files
 set(JSON_SCHEMA_FILES
@@ -28,7 +21,7 @@ set(JSON_SCHEMA_FILES
   ${CMAKE_SOURCE_DIR}/schema/digitalwrite_schema.json  
   ${CMAKE_SOURCE_DIR}/schema/interface_schema.json)
 
-# List of header files
+# List of schema files
 set(JSON_HEADER_FILES
   ${CMAKE_SOURCE_DIR}/schema/analogread_schema.h   
   ${CMAKE_SOURCE_DIR}/schema/digitalread_schema.h   
@@ -47,13 +40,22 @@ SET(MOOS_LIBRARIES
   ${CMAKE_CURRENT_SOURCE_DIR}/../moos-ivp/lib/libapputil.a
   ${CMAKE_CURRENT_SOURCE_DIR}/../moos-ivp/lib/libmbutil.a)
 
-add_schema_headers(${JSON_SCHEMA_FILES} ${JSON_HEADER_FILES})
+FOREACH(LOOP_SCHEMA ${JSON_SCHEMA_FILES})
+	get_filename_component(LOOP_DIR ${LOOP_SCHEMA} DIRECTORY)
+	get_filename_component(LOOP_FILE_WE ${LOOP_SCHEMA} NAME_WE)
+	SET(LOOP_HEADER ${LOOP_DIR}/${LOOP_FILE_WE}.h)
+	MESSAGE(STATUS, " Running xxd in ${LOOP_DIR} against ${LOOP_SCHEMA} to create ${LOOP_HEADER}")
+	add_custom_command(
+		OUTPUT ${LOOP_HEADER}
+		COMMAND	cd ${LOOP_DIR} && ${XXD} -i ${LOOP_FILE_WE}.json ${LOOP_FILE_WE}.h
+		DEPENDS ${LOOP_SCHEMA})
+ENDFOREACH(LOOP_SCHEMA)
 
 SET(SRC
   aREST.cpp
   aREST_Info.cpp
   main.cpp
-  ${JSON_HEADER_FILES}
+  "${JSON_HEADER_FILES}"
 )
 
 ADD_EXECUTABLE(paREST ${SRC})

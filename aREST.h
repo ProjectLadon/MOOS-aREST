@@ -9,6 +9,19 @@
 #define aREST_HEADER
 
 #include "MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h"
+#include "rapidjson/rapidjson.h"
+
+class aRESTItem {
+	public:
+		virtual aRESTItem(rapidjson::Document config);
+		~aRESTItem();
+
+		virtual bool fetchItem();
+
+	protected:
+
+
+}
 
 class aREST : public AppCastingMOOSApp
 {
@@ -29,6 +42,12 @@ class aREST : public AppCastingMOOSApp
    void registerVariables();
 
  private: // Configuration variables
+ 	std::vector<aRESTItem*>		incomingItems;
+ 	std::vector<aRESTItem*>		outgoingItems;
+ 	bool						isSerial;
+ 	std::string					serialDevice;
+ 	int							serialSpeed;
+ 	std::string					url;
 
  private: // State variables
 };
