@@ -170,7 +170,7 @@ A connector between MOOS and aREST running on Arduino satellite nodes. It provid
 	"required":["function","name"]
 }
 ``` 
-* confFile -- path to a configuration file with any combination of other objects. The contents of the file must be a single JSON array of objects conforming to one of the previous schemas. 
+* confFile -- path to a configuration file with any combination of other objects. The contents of the file must be a single JSON array of objects conforming to one or more of the previous schemas. 
 * digitalPollPeriod -- polling period for digitalRead items, in frames. 
 * analogPollPeriod -- polling period for analogRead items, in frames. 
 * variablePollPeriod -- polling period for variable items, in frames. If this is a non-negative number but no variable items are specified, this will collect all returned variables and publish them under their received names prefixed with the name of this process and an underscore. For example, a variable named ```voltage``` collected by this process run under its own name would be publishd as ```aREST_voltage```.
