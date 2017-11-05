@@ -1,0 +1,13 @@
+active: true
+derived: false
+level: 1.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  This module **shall** be implemented as a MOOS Appcasting App as describe in the (http://oceanai.mit.edu/moos-ivp/pmwiki/pmwiki.php)[MOOS-IvP wiki].
+
+  This module **shall** use (http://www.rapidjson.org)[rapidjson] as the JSON parse/unparse library.
+
+  This module **shall** use libcurl as the HTTP client. 

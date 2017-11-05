@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  * The ```interfaceType``` element **must** be equal to either ```serial``` or ```network```. All other values **shall** render this object invalid. 
