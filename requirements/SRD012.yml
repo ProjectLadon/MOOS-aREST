@@ -1,0 +1,30 @@
+active: true
+derived: false
+level: 1.3.3
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  Each ```analogRead``` item **shall** be defined by a JSON document that is compliant with the following JSON schema. This JSON document **shall** be presented either as the value of a ```analogRead``` key or as an element in the JSON array contained in the file named by the ```confFile``` key.
+
+  Note that this JSON schema is provided here for reference only -- the authoritative version **shall** be stored in MOOS-paREST/schema/analogRead_schema.json.
+
+  ```
+  {
+    "$schema": "http://json-schema.org/schema#",
+    "id": "AREST_analogRead",
+    "type": "object",
+    "properties":{
+      "function":"analogRead",
+      "pin":{"type":"number"},
+      "variable":{
+        "type":"string",
+        "$comment": "This must be a free variable name; it will be published as a DOUBLE"
+      },
+      "offset":{"type":"integer"},
+      "gain":{"type":"number"}
+    },
+    "required":["function","pin","variable"]
+  }
+  ```

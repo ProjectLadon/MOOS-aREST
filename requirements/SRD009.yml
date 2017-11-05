@@ -12,4 +12,4 @@ text: |
 
   * The ```pin``` key **shall** name an integer value corresponding to the pin to be read.
 
-  * The ```variable``` key **shall** name the variable to publish this function under. 
+  * The ```variable``` key **shall** name the variable to publish the retrieved value under. It **shall** be published as a BINARY.
