@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.3.2
+links: []
+normative: true
+ref: ''
+reviewed: 0ad7965fcf2ec52a8848bdd445c58b82
+text: |
+  The ```pin``` key **shall** name an integer value corresponding to the analog pin to be read.

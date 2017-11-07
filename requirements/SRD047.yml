@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.6.4
+links: []
+normative: true
+ref: ''
+reviewed: 3ea2136b51b7d140ea8a2c4d64f5acb2
+text: |
+  The ```returnType``` key **shall** name the type of variable returned by the function. It **must** be a MOOS variable type, i.e. either STRING, DOUBLE, or BINARY.

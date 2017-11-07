@@ -4,7 +4,7 @@ level: 1.3.2
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 5095a4d9aafb1a70bfe30ae07fdb0841
 text: |
   Each ```digitalWrite``` item **shall** be defined by a JSON document that is compliant with the following JSON schema. This JSON document **shall** be presented either as the value of a ```digitalWrite``` key or as an element in the JSON array contained in the file named by the ```confFile``` key.
 

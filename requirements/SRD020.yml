@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.5.4
+links: []
+normative: true
+ref: ''
+reviewed: 2f2c6844236e8414b17941d89b77676d
+text: |
+  The ```variable``` key **shall** be the name this variable is published under to the MOOS community.

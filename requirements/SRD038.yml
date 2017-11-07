@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.1.4
+links: []
+normative: true
+ref: ''
+reviewed: 11251fe416f6add5ef129d567fb0e727
+text: |
+  The ```speed``` key, if present, **must** be interpreted as a serial speed in bps. If this key is not present, this module **must** default to 115200 (bps).

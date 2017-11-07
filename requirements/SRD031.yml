@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.2.2
+links: []
+normative: true
+ref: ''
+reviewed: c7ef26fd6d04e2c88bfc36bb840b18bb
+text: |
+  The ```pin``` key **shall** name an integer value corresponding to the pin to be written.

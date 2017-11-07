@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.4.3
+links: []
+normative: true
+ref: ''
+reviewed: f2c2248fef783f2e4211ea57df1ee9bc
+text: |
+  This module **shall** subscribe to the DOUBLE variable named by ```variable``` key.

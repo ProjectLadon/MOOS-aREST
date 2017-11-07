@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.3
+links: []
+normative: true
+ref: ''
+reviewed: bd8497050aa0d587f8dac4fc9d58d352
+text: |
+  The ```analogPollPeriod``` **shall** specify the interval in ticks between consecutives reads of the analog inputs. If the interval is 0, the analog inputs **shall** be read on every tick.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.3.4
+links: []
+normative: true
+ref: ''
+reviewed: 3693bf39aa228c3b94fce0cd3eac741d
+text: |
+  The ```offset``` value **shall** be added to the received value prior to publication. If the ```offset``` key is absent, it **shall** default to 0.

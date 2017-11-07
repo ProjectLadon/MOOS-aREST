@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.3.5
+links: []
+normative: true
+ref: ''
+reviewed: 09538ac8a6ac640fd00775a26a04d66f
+text: |
+  The received value shall be multiplied by the ```gain``` value after the ```offset``` value has been added. If the ```gain``` value is not present it **shall** default to 1.

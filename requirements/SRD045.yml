@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.6.3.2
+links: []
+normative: true
+ref: ''
+reviewed: 3bf98022263dae99ac6b0dd3988f9aa1
+text: |
+  The ```inputVariable``` key **shall** be the name of the MOOS variable whose value is used for this argument.

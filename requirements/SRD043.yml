@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.6.3
+links: []
+normative: true
+ref: ''
+reviewed: e845fa707a963555a5853b914900e7a2
+text: |
+  The ```parameters``` key **shall** be optional. If present, it **must** be an array of one or more JSON objects, each of which specifies an input parameter to the called function.

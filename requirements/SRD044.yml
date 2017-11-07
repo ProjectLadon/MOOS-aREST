@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.6.3.1
+links: []
+normative: true
+ref: ''
+reviewed: 56603886a6d730c72d5f6437dfe1ae4e
+text: |
+  The ```name``` key **shall** be the name of the argument as passed to the aREST endpoint function.

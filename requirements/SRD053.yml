@@ -1,0 +1,11 @@
+active: true
+derived: false
+level: 1.2.4.1
+links: []
+normative: true
+ref: SRD012.yml
+reviewed: 03a55e2b15202421a8a1147b1572ca54
+text: |
+  If ```variablePollPeriod``` is set and variables are returned that are not named by corresponding ```variable``` declarations, those variables **shall** be published under names formed by prepending the name of the calling process and an underscore.
+
+  For example, if a variable named ```voltage``` were collected and the name of this process were ```aREST```, the resulting variable would be named ```aREST_voltage```.

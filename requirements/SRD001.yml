@@ -4,12 +4,12 @@ level: 1.0
 links: []
 normative: false
 ref: ''
-reviewed: null
+reviewed: dbf71417e05fda4521f2b1097236e339
 text: |
   MOOS aREST interface module
 
-  This module provides a mechanism for a MOOS community to use an Arduino-compatible board running an aREST sketch as a physical interface device. It provides interface routines for all of the major aREST calls. 
+  This module provides a mechanism for a MOOS community to use an Arduino-compatible board running an aREST sketch as a physical interface device. It provides interface routines for all of the major aREST calls.
 
-  This library uses libcurl as the communication mechanism. 
+  This library uses libcurl as the communication mechanism.
 
-  Implementation of a serial interface is planned for the future but has not been implemented for this iteration.  
+  Implementation of a serial interface is planned for the future but has not been implemented for this iteration.

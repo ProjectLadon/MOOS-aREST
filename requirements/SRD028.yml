@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.3.3
+links: []
+normative: true
+ref: ''
+reviewed: 02adf96f32efec34ebdbf7bcec936d1a
+text: |
+  The ```variable``` key **shall** name the variable to publish the retrieved value under. It **shall** be published as a DOUBLE.

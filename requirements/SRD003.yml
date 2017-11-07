@@ -1,12 +1,12 @@
 active: true
 derived: false
-level: 1.2
+level: 1.2.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 744e3a3cde7912b64756f64ace1ffb84
 text: |
-  The aRESt interface **shall** be defined by a JSON document that is compliant with the following JSON schmema. This JSON document **shall** be presented either as the value of the key ```interface``` in the MOOS configuration or as an element in the JSON array contained in the file named by the ```confFile``` key. If both are present, the document in the MOOS configuration **shall** take precendence. 
+  The aRESt interface **shall** be defined by a JSON document that is compliant with the following JSON schmema. This JSON document **shall** be presented either as the value of the key ```interface``` in the MOOS configuration or as an element in the JSON array contained in the file named by the ```confFile``` key. If both are present, the document in the MOOS configuration **shall** take precendence.
 
   Note that this JSON schema is provided here for reference only -- the authoritative version **shall** be stored in MOOS-paREST/schema/interface_schema.json.
 
@@ -28,7 +28,7 @@ text: |
             },
             "speed": {"type":"integer", "$comment":"defaults to 115200"},
             "serialFormat": {
-              "type":"string", 
+              "type":"string",
               "pattern": "",
               "$comment":"Pattern needs to be filled in so it only permits sane values",
               "$comment":"Defaults to 8N1"

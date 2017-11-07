@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.1.5
+links: []
+normative: true
+ref: ''
+reviewed: 4cdca234a779f5eb3ed4c8c17e2989c4
+text: |
+  The ```serialFormat``` key, if present, **must** be interepreted as the same format as 8N1 (eight data bits, no parity, 1 stop bit). This **shall** default to 8N1 if not present. Only 8N1 must be supported.

@@ -1,14 +1,9 @@
 active: true
 derived: false
-level: 1.2.3
+level: 1.2.1.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: ab36cebe0a2b8e5e0279ca96b29b06bf
 text: |
-  If the value is ```serial```, the document **must** contain an ```interface``` key which **must** contain the name of the serial serial interface attached to the aREST target. A ```serial``` document **may** also contain ```speed``` and ```serialFormat``` keys. 
-
-  * The ```speed``` key, if present, **must** be interpreted as a serial speed in bps. If this key is not present, this module **must** default to 115200 (bps).
-
-  * The ```serialFormat``` key, if present, **must** be interepreted as the same format as 8N1 (eight data bits, no parity, 1 stop bit). This **shall** default to 8N1 if not present. Only 8N1 must be supported. 
-
+  If the value is ```serial```, the document **must** contain an ```interface``` key which **must** contain the name of the serial serial interface attached to the aREST target. A ```serial``` document **may** also contain ```speed``` and ```serialFormat``` keys.

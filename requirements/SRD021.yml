@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.4.2
+links: []
+normative: true
+ref: ''
+reviewed: 471d72e44248abac7af4884d238bbbb1
+text: |
+  The ```pin``` key **shall** name an integer value corresponding to the analog pin to be written.

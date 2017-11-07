@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.1.3
+links: []
+normative: true
+ref: ''
+reviewed: 826ba7f303db2b7ae79d4b55e65dedb2
+text: |
+  This module **shall** use libcurl as the HTTP client.

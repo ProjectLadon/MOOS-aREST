@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.6.2
+links: []
+normative: true
+ref: ''
+reviewed: 6305294f8412277f000cf59aae1490ec
+text: |
+  The ```name``` key **shall** be the name of the function called on the aREST endpoint.

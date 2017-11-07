@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.4.4
+links: []
+normative: true
+ref: ''
+reviewed: 10155eb38776d6d06e3e990389f54df0
+text: |
+  The ```offset``` value **shall** be added to the subscribed value prior to transmission. If the ```offset``` key is absent, it **shall** default to 0.

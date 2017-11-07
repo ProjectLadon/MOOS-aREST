@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.4.5
+links: []
+normative: true
+ref: ''
+reviewed: 99eef1ffe8d2cd55848d12b611b6b66b
+text: |
+  The subscribed value shall be multiplied by the ```gain``` value after the ```offset``` value has been added. If the ```gain``` value is not present it **shall** default to 1.

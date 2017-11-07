@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.4
+links: []
+normative: true
+ref: ''
+reviewed: 9ddac2a5ddf8cc90c625ee264feb5f1f
+text: |
+  The ```variablePollPeriod``` **shall** specify the interval in ticks between consecutives reads of the variables. If the interval is 0, the variables **shall** be polled on every tick.

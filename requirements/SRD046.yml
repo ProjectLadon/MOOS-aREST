@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.6.3.3
+links: []
+normative: true
+ref: ''
+reviewed: c5db59e3a6d727a39eae7324b3b1ac97
+text: |
+  The ```inputVariableType``` key **shall** name the type of ```inputVariable```. It **must** be a MOOS variable type, i.e. either STRING, DOUBLE, or BINARY.

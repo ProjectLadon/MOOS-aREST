@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.6.5
+links: []
+normative: true
+ref: ''
+reviewed: 777596a5c084b80feb0faeb4d2ca445c
+text: |
+  This module **shall** publish the value returned by the called function to the MOOS variable named by ```returnVariable```.

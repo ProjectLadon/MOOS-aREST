@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.2
+links: []
+normative: true
+ref: ''
+reviewed: 65b30febf62f5091cc939f7e108a8c44
+text: |
+  The ```digitalPollPeriod``` **shall** specify the interval in ticks between consecutives reads of the digital inputs. If the interval is 0, the digital inputs **shall** be polled on every tick.

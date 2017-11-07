@@ -4,8 +4,8 @@ level: 1.3.0
 links: []
 normative: false
 ref: ''
-reviewed: null
+reviewed: 4aced2c7c5e62ad9341afc521a38e8c1
 text: |
   Configuration of aREST items
 
-  The aREST items touched by this are each configured with a JSON document, as detailed in this section. 
+  The aREST items touched by this are each configured with a JSON document, as detailed in this section.

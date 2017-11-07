@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.2.3
+links: []
+normative: true
+ref: ''
+reviewed: 3de3fa1267432c225f4839458e9fcbd3
+text: |
+  The ```variable``` key **shall** name the variable to subscribe to in order to drive this variable. This variable **must** be a BINARY; if it has some other type, the resulting behavior is undefined.

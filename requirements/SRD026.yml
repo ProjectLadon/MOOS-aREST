@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.4.7
+links: []
+normative: true
+ref: ''
+reviewed: 65e0c4f51d746346c09cc3713643f35b
+text: |
+  If ```minValue``` exists, it **shall** be the smallest value that will be written to the target pin.

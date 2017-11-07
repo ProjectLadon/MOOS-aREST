@@ -1,9 +1,9 @@
 active: true
 derived: false
-level: 1.2.1
+level: 1.2.1.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: b7f7ad6af63c4bd64ea120d3c28e5ec5
 text: |
-  * The ```interfaceType``` element **must** be equal to either ```serial``` or ```network```. All other values **shall** render this object invalid. 
+  * The ```interfaceType``` element **must** be equal to either ```serial``` or ```network```. All other values **shall** render this object invalid.

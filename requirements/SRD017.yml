@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.3.5.1
+links: []
+normative: true
+ref: ''
+reviewed: aea7bcccb1462fcd19e54003a1f1e688
+text: |
+  The ```function``` key **shall** have the value of ```variable```. Any other value shall be invalid for this item, but **may** be valid for others.

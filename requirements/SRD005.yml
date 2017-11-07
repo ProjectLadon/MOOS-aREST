@@ -1,9 +1,9 @@
 active: true
 derived: false
-level: 1.2.2
+level: 1.2.1.2
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 0742d247284979f7e92d4f6d75d37697
 text: |
   If the value of ```interfaceType``` is ```network```, the only other key **must** be ```url```, which **shall** contain the root URI of the target aREST interface. The document **must** not contain additional keys.

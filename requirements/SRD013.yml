@@ -4,16 +4,6 @@ level: 1.3.3.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 735b1c82eb70ceee22841ec7d3d7e9f8
 text: |
-  The keys defined in analogRead_schema.json **shall** be interpreted as follows:
-
-  * The ```function``` key **shall** have the value of ```analogRead```. Any other value shall be invalid for this item, but **may** be valid for others. 
-
-  * The ```pin``` key **shall** name an integer value corresponding to the analog pin to be read.
-
-  * The ```variable``` key **shall** name the variable to publish the retrieved value under. It **shall** be published as a DOUBLE.
-
-  * The ```offset``` value **shall** be added to the received value prior to publication. If the ```offset``` key is absent, it **shall** default to 0.
-
-  * The received value shall be multiplied by the ```gain``` value after the ```offset``` value has been added. If the ```gain``` value is not present it **shall** default to 1.
+  The ```function``` key **shall** have the value of ```analogRead```. Any other value shall be invalid for this item, but **may** be valid for others.
