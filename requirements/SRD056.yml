@@ -1,0 +1,11 @@
+active: true
+derived: false
+level: 2.0
+links: []
+normative: false
+ref: ''
+reviewed: 03ec8df726b5112fa98f5377ebb83962
+text: |
+  MOOS Startup Behavior
+
+  This section defines how this module functions during the startup period, i.e. that period of time controlled by the OnStartUp() function.

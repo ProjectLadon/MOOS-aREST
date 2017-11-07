@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1
+links: []
+normative: true
+ref: ''
+reviewed: 6bd6e7920ffd210c9b4fa35e943e0ad3
+text: |
+  Startup configuration options **shall** be processed in the order presented. Items configured by the file pointed at by ```confFile``` shall be processed in array order at the point in the confgiuration where the ```confFile``` value is defined.

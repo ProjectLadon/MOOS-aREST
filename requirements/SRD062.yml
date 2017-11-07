@@ -1,0 +1,11 @@
+active: true
+derived: false
+level: 3.0
+links: []
+normative: false
+ref: ''
+reviewed: 946ddd8cbe513d0775c57352f02d2820
+text: |
+  MOOS Comms Behavior
+
+  This section defines how the module behaves when it receives new mail, i.e. when it is under control of the OnNewMail() function.

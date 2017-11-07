@@ -1,0 +1,12 @@
+active: true
+derived: false
+level: 3.2.1
+links: []
+normative: true
+ref: ''
+reviewed: 788037af0d1379d70ad7ec5ab93c3b80
+text: |
+  If no value has been received for a given parameter, then a default value **shall** be transmitted. The default values used **shall** be as follows:
+  * STRING = ""
+  * DOUBLE = 0
+  * BINARY = false

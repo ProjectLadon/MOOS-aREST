@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 3.4
+links: []
+normative: true
+ref: ''
+reviewed: fa3b428663820f15d4088575c0fe61af
+text: |
+  Return values from function calls **shall** be published upon receipt.

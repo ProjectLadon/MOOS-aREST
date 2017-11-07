@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 3.2
+links: []
+normative: true
+ref: ''
+reviewed: 65b4960165a7fcf123f4e2d9230c31b2
+text: |
+  If a ```function``` item has more than one parameter and not all of them are present, the last received value **shall** be used.

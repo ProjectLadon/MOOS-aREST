@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.3.1
+links: []
+normative: true
+ref: ''
+reviewed: e036d37f349a3e0da537f892be8659b0
+text: |
+  If this module is unable to configure a pin for any reason, it **shall** attempt to do so on any future calls to that pin until that pin has been successfully configured.

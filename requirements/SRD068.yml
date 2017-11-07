@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 3.5
+links: []
+normative: true
+ref: ''
+reviewed: 56f1a34d2e8582d4d663da6ec2205e6b
+text: |
+  Any failed calls **shall** be logged.

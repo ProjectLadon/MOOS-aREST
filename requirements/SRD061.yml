@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.3.2
+links: []
+normative: true
+ref: ''
+reviewed: 6641395f00f0e49044f7abf3c6b9eb40
+text: |
+  Any failure to configure a pin **shall** be logged.

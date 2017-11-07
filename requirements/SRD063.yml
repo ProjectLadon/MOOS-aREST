@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 3.1
+links: []
+normative: true
+ref: ''
+reviewed: 45f4a9cf3b0fac7285af9e173116d1b7
+text: |
+  On receipt of a new value attached to any ```digitalWrite```,  ```analogWrite```, or ```function``` item, that item **shall** be transmitted to the aREST end point.

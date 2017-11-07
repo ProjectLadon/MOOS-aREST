@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.3
+links: []
+normative: true
+ref: ''
+reviewed: 5a437e26d6356005bef275195d6b1995
+text: |
+  At the end of the startup phase, this module **shall** attempt to configure the mode of all pins that correspond to defined items.
