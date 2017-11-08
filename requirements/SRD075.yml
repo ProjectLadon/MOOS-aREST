@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 5.5.0
+links: []
+normative: true
+ref: ''
+reviewed: f79f28c919d24e49128f5996ef559b53
+text: |
+  If ```variablePollPeriod``` ticks have elapsed since the last poll of the variables, all variables **shall** be polled. This **may**, if supported by aREST, poll all variables with a single request. It **shall not** be impacted by incidental fetching of the variables, such as by function calls.

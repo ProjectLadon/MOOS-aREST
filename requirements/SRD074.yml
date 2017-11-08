@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 5.4
+links: []
+normative: true
+ref: ''
+reviewed: 86cd698f0f71ca163e18d8d39ccf2fa3
+text: |
+  If ```analogPollPeriod``` ticks have elapsed since the last poll of the analog inputs, all analog inputs **shall** be polled. This **may**, if supported by aREST, poll all analog inputs with a single request.

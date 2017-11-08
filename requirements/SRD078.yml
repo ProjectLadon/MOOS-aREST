@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 3.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  On connection to the server, this module **shall** register for all variables called for in ```digitalWrite```, ```analogWrite```, and ```function``` items.

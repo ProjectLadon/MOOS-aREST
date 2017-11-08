@@ -4,7 +4,7 @@ level: 1.2.4.1
 links: []
 normative: true
 ref: SRD012.yml
-reviewed: 03a55e2b15202421a8a1147b1572ca54
+reviewed: 0ed2ebc2fe1d7606b7924beaa2040327
 text: |
   If ```variablePollPeriod``` is set and variables are returned that are not named by corresponding ```variable``` declarations, those variables **shall** be published under names formed by prepending the name of the calling process and an underscore.
 

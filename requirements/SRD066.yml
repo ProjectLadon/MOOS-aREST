@@ -1,9 +1,9 @@
 active: true
 derived: false
-level: 3.3
+level: 4.3
 links: []
 normative: true
 ref: SRD053.yml
-reviewed: 10a92fa6078328cd7e6e0b038eaf2da7
+reviewed: da9ee18e00415af8b0ebf663fe1de0fc
 text: |
   Any variable values received on a ```function``` call **shall** be published in accordance with a previously defined ```variable``` item or as described in the referenced requirements. This behavior **shall** be independent of ```variablePollPeriod```.

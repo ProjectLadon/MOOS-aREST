@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 5.2
+links: []
+normative: true
+ref: ''
+reviewed: 82ec857ac1b8b2184db9bd6d223009cc
+text: |
+  For the purposes of this section, 'polling' **shall** mean making a request to the corresponding aREST input via the configured interface.

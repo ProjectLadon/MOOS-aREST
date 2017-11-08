@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.5
+links: []
+normative: true
+ref: ''
+reviewed: d6911db841efe26da376b6dee00bac24
+text: |
+  The ```functionPollPeriod``` **shall** specify the interval, in ticks, between successive function calls. If the interval is 0, the function(s) shall be polled on every tick. Note that this applies both to functions that have inputs and those that do not.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 5.5.1
+links: []
+normative: true
+ref: SRD053.yml
+reviewed: 329db34791efcee7dde22e56dc35c6fc
+text: |
+  If any variables are received that are not defined by corresponding ```variable``` declarations, those variables **shall** be treated as per the referenced requirement.

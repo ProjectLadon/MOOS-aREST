@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 5.1
+links: []
+normative: true
+ref: ''
+reviewed: c2ef6ba57bee5206fe31b74ee0f8d17d
+text: |
+  If any pins that correspond to items have not had their modes successfully set, this module **shall** attempt to set their modes at the start of each tick.

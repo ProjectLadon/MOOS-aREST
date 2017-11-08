@@ -1,0 +1,11 @@
+active: true
+derived: false
+level: 5.0
+links: []
+normative: false
+ref: ''
+reviewed: 595afd57b72bd52eca377ee3297002f0
+text: |
+  MOOS Tick Behavior
+
+  This section defines how the module behaves when under the control of the Iterate() function.

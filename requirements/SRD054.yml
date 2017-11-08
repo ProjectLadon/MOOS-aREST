@@ -4,6 +4,6 @@ level: 1.2.4.2
 links: []
 normative: true
 ref: ''
-reviewed: 45105d4b78bd2875568b5939c11ddc8b
+reviewed: f46906114237494657397d030c57eada
 text: |
   The type of the published variable **shall** be deduced from the JSON type received from the aREST input. Numbers **shall** be published as DOUBLE, booleans **shall** be published as BINARY, and all others **shall** be published as STRING.

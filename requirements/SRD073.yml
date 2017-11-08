@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 5.3
+links: []
+normative: true
+ref: ''
+reviewed: d4ba52c3c01b8e2267410eacf53556c5
+text: |
+  If ```digitalPollPeriod``` ticks have elapsed since the last poll of the digital inputs, all digital inputs **shall** be polled. This **may**, if supported by aREST, poll all digital inputs with a single request.
