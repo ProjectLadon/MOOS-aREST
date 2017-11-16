@@ -1,0 +1,10 @@
+active: true
+derived: false
+level: 1.2.1
+links:
+- TST003: null
+normative: true
+ref: ''
+reviewed: 147eccbe1e1c9900107242b5852d030c
+text: |
+  The external aREST node **shall** run a sketch with the following properties:

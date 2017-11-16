@@ -1,0 +1,10 @@
+active: true
+derived: false
+level: 1.1
+links:
+- SRD035: null
+normative: true
+ref: ''
+reviewed: e22be3f6c25a30713d5aacd97a7c4597
+text: |
+  The software **shall** be written in such a way as to accomodate unit testing without creating a MOOS community.

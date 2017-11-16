@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2
+links: []
+normative: true
+ref: ''
+reviewed: 3822ded8a7dae83917d9f7d94d153498
+text: |
+  Testing **shall** require an external aREST node.

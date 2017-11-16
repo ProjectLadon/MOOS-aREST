@@ -1,0 +1,10 @@
+active: true
+derived: false
+level: 1.2.2
+links:
+- TST003: null
+normative: true
+ref: ''
+reviewed: 725783064b31c2856d6613475a9615db
+text: |
+  The external aREST node **shall** be wired in accordance with the attached schematic.
