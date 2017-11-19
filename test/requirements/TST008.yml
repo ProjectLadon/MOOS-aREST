@@ -1,8 +1,9 @@
 active: true
 derived: false
-level: 1.2.5
+level: 2.2.0
 links: []
-normative: true
+normative: false
 ref: ''
-reviewed: 36a62a5333f930d29d27bf9ffdac7537
-text: ''
+reviewed: fa8664f423ffa15b8fc9d8bce60338f7
+text: |
+  Digital Write Tests

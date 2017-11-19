@@ -1,8 +1,9 @@
 active: true
 derived: false
-level: 1.2.4
+level: 2.0
 links: []
-normative: true
+normative: false
 ref: ''
-reviewed: 4d776e371b947660f48f38a35a6d6b43
-text: ''
+reviewed: 6d36263eab9dc1e37136f5c7d4a2a477
+text: |
+  Configuration Item Tests
