@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.1.7
+links: []
+normative: true
+ref: ''
+reviewed: f597343b0e28cf37a2c4048dae09a946
+text: |
+  The sketch **shall** expose an integer variable named ```analogPollCount``` that contains the number of analog read requests received.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.1.3
+links: []
+normative: true
+ref: ''
+reviewed: 8b2b384be58600eb1501a12b7c86a1d7
+text: |
+  The sketch **shall** expose a function called ```multiply()``` that takes a two floats as arguments and returns their product.

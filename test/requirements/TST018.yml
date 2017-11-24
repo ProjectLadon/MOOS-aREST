@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.1.10
+links: []
+normative: true
+ref: ''
+reviewed: a747e1b323f8a978c8c5ef756083357f
+text: |
+  The sketch **shall** expose a string variable named ```testString``` that contains the output of the statement ```sprintf("The count is: %d", count(0))```

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.1
+links: []
+normative: true
+ref: ''
+reviewed: 0b7c798b38244828939472d13e118691
+text: |
+  This test **shall** verify that variable polling works correctly with polling periods between 0 and 10 and with all combinations of exposed variables.

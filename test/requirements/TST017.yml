@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.1.9
+links: []
+normative: true
+ref: ''
+reviewed: 3916e78555512bd7e794df6088dbd1bd
+text: |
+  The sketch **shall** expose a float variable named ```testFloat``` that contains the analog value of A0 multiplied by 0.05.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.1.0
+links: []
+normative: false
+ref: ''
+reviewed: 4b6bfe8825eb934c94cecf21499972de
+text: |
+  Verify that non-conforming interface JSON fails.

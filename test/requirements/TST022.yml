@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.1.3
+links: []
+normative: true
+ref: ''
+reviewed: 41e42ba792d32fc0f4beb63f195dd8de
+text: |
+  Verify that if ```iterfaceType``` is ```network``` and the ```url``` key contains a non-URI value that startup fails.

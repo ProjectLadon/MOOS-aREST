@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.1.5
+links: []
+normative: true
+ref: ''
+reviewed: 60ed3f81da24969c1495773b26d13409
+text: |
+  Verify that a ```digitalRead``` object placed here causes startup to fail.

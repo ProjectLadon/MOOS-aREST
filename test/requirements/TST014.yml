@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.1.6
+links: []
+normative: true
+ref: ''
+reviewed: ba981b9f91393c941217a3fe37d5601a
+text: |
+  The sketch **shall** expose an integer variable named ```digitalPollCount``` that contains the number of digital read requests received.

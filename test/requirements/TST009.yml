@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.1.1
+links: []
+normative: true
+ref: ''
+reviewed: 4398e9037b8b68b45f2d1a7deea47eba
+text: |
+  The sketch **shall** expose all analog and digital I/O.

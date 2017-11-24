@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.1.4
+links: []
+normative: true
+ref: ''
+reviewed: 902da569219a3f9e8a9b2186f5825a86
+text: |
+  The sketch **shall** expose a function called ```reset()``` that resets all counters to zero.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.1
+links: []
+normative: true
+ref: ''
+reviewed: c0ae205c261901fbbf7f22f5314035ea
+text: |
+  This test **shall** verify that function polling works correctly with poll periods between 0 and 10 and all combinations of exposed functions.

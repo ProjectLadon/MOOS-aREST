@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.1.7
+links: []
+normative: true
+ref: ''
+reviewed: f56e5f37fefa7e991f4a1b8afd012233
+text: |
+  Verify that a ```analogRead``` object placed here causes startup to fail.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.1.8
+links: []
+normative: true
+ref: ''
+reviewed: 46a18ab83f2d24fbff5c67ee139e585d
+text: |
+  The sketch **shall** expose an integer variable named ```variablePollCount``` that contains the number of variable read requests received.

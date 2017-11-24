@@ -1,5 +1,5 @@
 settings:
   digits: 3
-  parent: SDD
-  prefix: TST
+  parent: SRD
+  prefix: SDD
   sep: ''

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.1.8
+links: []
+normative: true
+ref: ''
+reviewed: b9917229bad5aac98da083e1a509b623
+text: |
+  Verify that a ```analogWrite``` object placed here causes startup to fail.

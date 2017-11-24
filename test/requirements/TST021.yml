@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.1.2
+links: []
+normative: true
+ref: ''
+reviewed: f23975e3676c6ad2a00e6234f6ca1789
+text: |
+  Verify that if ```interfaceType``` is ```network``` and there is no ```url``` key that startup fails.

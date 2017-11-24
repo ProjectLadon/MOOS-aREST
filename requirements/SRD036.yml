@@ -6,4 +6,4 @@ normative: true
 ref: ''
 reviewed: b9eb07820f59c2b76384bafff5d1a46f
 text: |
-  This module **shall** use (http://www.rapidjson.org)[rapidjson] as the JSON parse/unparse library.
+  This module **shall** use [rapidjson](http://www.rapidjson.org) as the JSON parse/unparse library.

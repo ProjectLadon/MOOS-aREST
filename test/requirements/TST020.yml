@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.1.1
+links: []
+normative: true
+ref: ''
+reviewed: 86bb7c7a715fcd6868a12dc1d2c437de
+text: |
+  Verify that any value for ```interfaceType``` other than ```serial``` or ```network``` causes a failure.

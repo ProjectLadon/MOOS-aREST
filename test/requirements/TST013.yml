@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.2.1.5
+links: []
+normative: true
+ref: ''
+reviewed: 4991f0eff9e4cbce43b9898c4fe7eb97
+text: |
+  The sketch **shall** expose an integer variable named ```testInt``` that contains the digital value of pins 0-7.

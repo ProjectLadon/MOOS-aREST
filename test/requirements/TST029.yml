@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.2.1
+links: []
+normative: true
+ref: ''
+reviewed: aca6881f9d7608411a1c2d608f30db88
+text: |
+  This test **shall** verify that digital polling works correctly for every period from 0 to 10 and 0 to 8 digital pins.
