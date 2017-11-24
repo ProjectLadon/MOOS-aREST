@@ -44,3 +44,8 @@ paREST
 # MOOS log files
 examples/.LastOpenedMOOSLogDirectory
 examples/MOOSLog*
+
+# Eagle files
+*.l#*
+*.s#*
+*.b#*
