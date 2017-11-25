@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.2.2
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  The classes ```digitalRead```, ```analogRead```, and ```variable``` **shall** all implement a method with the signature ```bool poll(void)```. This method **shall** fetch the named item from the target and return ```true``` if it has been successfully retrieved.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.2.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  Each class **shall** have a member for each item in the corresponding JSON.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 3.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  The software **shall** compile in each JSON file in schema as a local string.
