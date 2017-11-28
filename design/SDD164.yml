@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.4.2.4
+links: []
+normative: true
+ref: ''
+reviewed: ee4657013c6f629d2d61526a1f900ab7
+text: |
+  If none of these conditions are true, this method **shall** return ```false```.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.2.4.1.2
+links: []
+normative: true
+ref: ''
+reviewed: d43b19da57010919b2e116eb6ca0fcfe
+text: |
+  Throws a ```std::invalid_argument``` exception if ```d``` does not comply with the schema.

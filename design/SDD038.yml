@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.4.1.1
+links: []
+normative: true
+ref: ''
+reviewed: 98b2a78bdc32b2711f99e2651e615366
+text: |
+  Returns value of ```interfaceType```.

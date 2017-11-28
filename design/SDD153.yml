@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.3.7.0
+links: []
+normative: false
+ref: ''
+reviewed: 79bf5dadd83fb67435e9e17737eabc4d
+text: |
+  ```operator bool()```

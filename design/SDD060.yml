@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.2.3.1.1
+links: []
+normative: true
+ref: ''
+reviewed: 6cac8a66280620319de8c44d8d65b684
+text: |
+  Cocatenates ```url``` and ```request``` and uses libcurl to transmit the request.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.5.1.0
+links: []
+normative: false
+ref: ''
+reviewed: e06ac5a1e2b121890a73e31ab1d27ed9
+text: |
+  ```Configuration()```

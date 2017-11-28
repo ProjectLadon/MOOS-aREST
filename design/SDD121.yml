@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.9.2
+links: []
+normative: true
+ref: ''
+reviewed: b314def0a1107f1628379d686b7a83a8
+text: |
+  Stores schema for the ```RestItem::DigitalWrite``` type

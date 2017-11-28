@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.14.2
+links: []
+normative: true
+ref: ''
+reviewed: cdae4b9c33b26ae4b40d4b80f4538634
+text: |
+  Stores schema for the ```RestItem::Function``` type

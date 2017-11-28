@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.2.1
+links: []
+normative: true
+ref: ''
+reviewed: a3cecba56845742f4e132fafca580e96
+text: |
+  ```Base``` -- the default value

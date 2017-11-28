@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.8.2
+links: []
+normative: true
+ref: ''
+reviewed: 2e91b355b7f82c7ca3ec0b412ce95a80
+text: |
+  Stores schema for the ```interface``` type

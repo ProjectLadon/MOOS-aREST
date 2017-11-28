@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.3.2.1
+links: []
+normative: true
+ref: ''
+reviewed: 50ad85ca87da430223f84ff14afe7c88
+text: |
+  ```RestItem(std::string mytype)```

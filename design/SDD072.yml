@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.1
+links: []
+normative: true
+ref: ''
+reviewed: a1b6c4217770203784e84a51a3bb9167
+text: |
+  The purpose of this namespace is to allow the use of class names that would otherwise be reserved and/or confusing.

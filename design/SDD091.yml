@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.1
+links: []
+normative: true
+ref: ''
+reviewed: d8fee4ebbbe8c3012b38beb515be1cc4
+text: |
+  All data members **shall** be private.

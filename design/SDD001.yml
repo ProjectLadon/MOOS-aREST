@@ -1,9 +1,9 @@
 active: true
 derived: false
-level: 1
+level: 1.0
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: bd9c9de006593f8b3dc35e40c5a036cb
 text: |
   Dependencies & Build Configuration

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.5.5
+links: []
+normative: true
+ref: ''
+reviewed: d42169860714d1b7e2d92cf1e79aa275
+text: |
+  ```RestItem``` **shall** define a virtual equality operator that returns true if and only if the two compared items are of the same type and have equal members.

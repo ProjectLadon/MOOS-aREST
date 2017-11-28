@@ -1,9 +1,0 @@
-active: true
-derived: false
-level: 3.2
-links: []
-normative: true
-ref: ''
-reviewed: null
-text: |
-  The software **shall** maintain a ```list``` of each subclass of ```RestItem```. This list **shall** be populated from the configuration in the order in which the items appear.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.3.7.1
+links: []
+normative: true
+ref: ''
+reviewed: d909f4d366fd04e21c50aa719daaeafd
+text: |
+  Returns ```true``` if and only if ```interface``` has been properly configured.

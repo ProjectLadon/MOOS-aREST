@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.2.3
+links: []
+normative: true
+ref: ''
+reviewed: 78577917b937730acdfbcdb70276a691
+text: |
+  ```RestSerial``` -- value indicating a serial interface

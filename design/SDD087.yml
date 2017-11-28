@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.9
+links: []
+normative: true
+ref: ''
+reviewed: 3d9b1396d7045c3e82b6640999bd9fde
+text: |
+  ```RestItem::Function``` class

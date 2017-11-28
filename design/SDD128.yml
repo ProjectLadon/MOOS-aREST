@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.12.0
+links: []
+normative: false
+ref: ''
+reviewed: 25dfef5d21951d02da510d21bb9ba07a
+text: |
+  ```analogReadSchema```

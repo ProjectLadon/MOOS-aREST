@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.7.1
+links: []
+normative: true
+ref: ''
+reviewed: d55c1164e544601a5e775f31ca71ba67
+text: |
+  Type ```std::list<RestItem::RestItem*>```

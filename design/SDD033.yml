@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.3.1.1
+links: []
+normative: true
+ref: ''
+reviewed: 2ab8459fee56a8143aece22811ea7d56
+text: |
+  Type shall be ```ifaceType_t```.

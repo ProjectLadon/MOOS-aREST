@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.4.2.0
+links: []
+normative: false
+ref: ''
+reviewed: 3ec5e7c447e641b7443fb16576a2b727
+text: |
+  ```bool jsonDispatch(rapidjson::Document d)```

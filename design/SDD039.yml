@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.4.2.0
+links: []
+normative: false
+ref: ''
+reviewed: d68cade05994038b551ea21be8ba099b
+text: |
+  ```std::unique_ptr<rapidjson::Document> makeRequest(string request)```

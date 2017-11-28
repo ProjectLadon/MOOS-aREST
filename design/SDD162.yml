@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.4.2.2
+links: []
+normative: true
+ref: ''
+reviewed: b0e02dc5e3670711f13c42433f3cd4f2
+text: |
+  If ```d``` conforms to the ```interfaceSchema```, the ```interface``` method **shall** be populated by calling ```d``` to ```RestInterface::factory()``` and assigning the result to ```interface```.

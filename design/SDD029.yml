@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.2.2
+links: []
+normative: true
+ref: ''
+reviewed: e048f3e151631c6570a7999eae27f1a8
+text: |
+  ```RestNetwork``` -- value indicating an HTTP interface

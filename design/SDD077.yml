@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.3.1.3
+links: []
+normative: true
+ref: ''
+reviewed: 34be824e0fea0423b17c84727878d5e4
+text: |
+  ```virtual bool poll()```

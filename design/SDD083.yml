@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.5
+links: []
+normative: true
+ref: ''
+reviewed: f8a8e972b5b1fccf9085a684660e4d69
+text: |
+  ```RestItem::DigitalWrite``` class

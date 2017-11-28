@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.10.2
+links: []
+normative: true
+ref: ''
+reviewed: fed7762a507970ed9c269c8aa87aee67
+text: |
+  Stores schema for the ```RestItem::DigitalRead``` type

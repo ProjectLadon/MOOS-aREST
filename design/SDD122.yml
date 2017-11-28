@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.10.0
+links: []
+normative: false
+ref: ''
+reviewed: 6616c78d738336826c4dc6fe5565a83f
+text: |
+  ```digitalReadSchema```

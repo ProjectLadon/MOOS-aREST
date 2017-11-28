@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.4.2.1
+links: []
+normative: true
+ref: ''
+reviewed: 778e502248a526a45b036c83ecee1286
+text: |
+  Takes a JSON object that conforms to one of the stored schemas. If it does not conform, this method **shall** return false.

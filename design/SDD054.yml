@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.2.2.1.1
+links: []
+normative: true
+ref: ''
+reviewed: 3315de7e9a2e9c64818ed04564f726f6
+text: |
+  Type ```std::string```

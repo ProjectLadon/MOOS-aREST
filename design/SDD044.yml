@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.4.3.1
+links: []
+normative: true
+ref: ''
+reviewed: fed8ac603db858564736c0f7101ce86d
+text: |
+  Takes a JSON document complying with the schema defined in schema/interface_schema.json.

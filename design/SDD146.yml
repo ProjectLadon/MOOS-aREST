@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.3.4.4
+links: []
+normative: true
+ref: ''
+reviewed: f5990548ba4690d523b59f7156050694
+text: |
+  If the ```param``` is ```confFile```, it **shall** pass ```value``` to ```confFileReader``` and returns the result.

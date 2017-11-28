@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.5.1.1
+links: []
+normative: true
+ref: ''
+reviewed: 05cb59b66aa1139baed11731b1630852
+text: |
+  Parses value of t into the enumerated elements of ifaceType_t.

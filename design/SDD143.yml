@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.3.4.1
+links: []
+normative: true
+ref: ''
+reviewed: 40ba2d6b94b69e9372fc3c84c9a7e2dc
+text: |
+  Takes a ```param``` and a ```value``` from the configuration file.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.12.2
+links: []
+normative: true
+ref: ''
+reviewed: 5c997c2ad0dbb8df10daebc6cd60c654
+text: |
+  Stores schema for the ```RestItem::AnalogRead``` type

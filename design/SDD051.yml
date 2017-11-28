@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.2.1
+links: []
+normative: true
+ref: ''
+reviewed: 863edd954042371f808e81d7db9c59d4
+text: |
+  Sub-class of ```RestInterface```

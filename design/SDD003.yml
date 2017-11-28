@@ -1,9 +1,0 @@
-active: true
-derived: false
-level: 2.1
-links: []
-normative: true
-ref: ''
-reviewed: null
-text: |
-  The software **shall** define a ```RestItem``` namespace and class. The purpose of this class (and enclosing namespace) is to provide a

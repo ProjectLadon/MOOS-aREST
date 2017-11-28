@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.2.4
+links: []
+normative: true
+ref: ''
+reviewed: af9efdb2ea03960eae2b41e480fc5c2b
+text: |
+  This must be a valid pointer in order for the configuration to be valid.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.2.3.1.2
+links: []
+normative: true
+ref: ''
+reviewed: 7b6fcded274f6062f3db4611171d43f0
+text: |
+  If the response is good (HTTP 200-series code & valid JSON), it **shall** the response as a parsed JSON document.

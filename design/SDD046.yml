@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.4.3.3
+links: []
+normative: true
+ref: ''
+reviewed: 54ee960b0b08a49dee73e057356a738c
+text: |
+  Returns a null pointer if ```d``` does not comply with the schema.

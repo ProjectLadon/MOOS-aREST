@@ -2,7 +2,7 @@ active: true
 derived: false
 level: 5.5.1
 links:
-- SRD053: null
+- SRD053: 0ed2ebc2fe1d7606b7924beaa2040327
 normative: true
 ref: SRD053.yml
 reviewed: 329db34791efcee7dde22e56dc35c6fc

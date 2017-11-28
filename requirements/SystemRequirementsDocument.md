@@ -12,15 +12,19 @@ Software Structure & Dependencies
 
 ### 1.1.1 SRD035 {#SRD035 }
 
-This module **shall** be implemented as a MOOS Appcasting App as describe in the (http://oceanai.mit.edu/moos-ivp/pmwiki/pmwiki.php)[MOOS-IvP wiki].
+This module **shall** be implemented as a MOOS Appcasting App as describe in the [MOOS-IvP wiki](http://oceanai.mit.edu/moos-ivp/pmwiki/pmwiki.php).
 
 ### 1.1.2 SRD036 {#SRD036 }
 
-This module **shall** use (http://www.rapidjson.org)[rapidjson] as the JSON parse/unparse library.
+This module **shall** use [rapidjson](http://www.rapidjson.org) as the JSON parse/unparse library.
 
 ### 1.1.3 SRD037 {#SRD037 }
 
 This module **shall** use libcurl as the HTTP client.
+
+### 1.1.4 SRD079 {#SRD079 }
+
+The software **shall** be written so as to maximize the coverage of unit testing that does not require MOOS-IvP.
 
 ## 1.2 MOOS Startup Configuration Options {#SRD049 }
 
@@ -501,4 +505,6 @@ If ```variablePollPeriod``` ticks have elapsed since the last poll of the variab
 If any variables are received that are not defined by corresponding ```variable``` declarations, those variables **shall** be treated as per the referenced requirement.
 
 > `requirements/SRD053.yml`
+
+*Parent links: SRD053*
 

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.4.3.0
+links: []
+normative: false
+ref: ''
+reviewed: dfac0a82bc5ab6f037ceed6a8c9942b4
+text: |
+  ```static RestInterface* factory(rapidjson::Document d)```

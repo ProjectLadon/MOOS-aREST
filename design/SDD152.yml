@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.3.6.1
+links: []
+normative: true
+ref: ''
+reviewed: eb8a7b1cebf0a5785e86bf2378bc237f
+text: |
+  This method **shall** iterate through ```pollList``` calling the ```procMail()``` method on each item. It **shall** return ```true``` if any of these calls return ```true```.

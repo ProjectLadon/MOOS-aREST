@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.3.4.6
+links: []
+normative: true
+ref: ''
+reviewed: 15742584f58365682a31c94f7b362cc1
+text: |
+  Returns ```true``` if and only if ```param``` names a valid configuration parameter and ```value``` is a valid value for that parameter. Otherwise, it **shall** return ```false```.

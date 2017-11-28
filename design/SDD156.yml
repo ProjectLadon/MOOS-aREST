@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.4.1.0
+links: []
+normative: false
+ref: ''
+reviewed: e219c0e34d46d9628f27eb61784aa643
+text: |
+  ```bool confFileReader(std::string filename)```

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.5.4
+links: []
+normative: true
+ref: ''
+reviewed: 1232e2e9a4238a218551c01dedff93d4
+text: |
+  ```RestItem``` **shall** define a virtual method with the signature ```bool subscribe(MOOSMSG_LIST &NewMail)```. This function **shall** populate the members from the subscribed MOOS variables.

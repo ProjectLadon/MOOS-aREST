@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.2.0
+links: []
+normative: false
+ref: ''
+reviewed: 72a4b83c41bdc45a2751e82b349a3a41
+text: |
+  This class **shall** define an enum ```ifaceType_t``` that contains an entry for each sub-class.

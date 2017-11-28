@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.5.1.1
+links: []
+normative: true
+ref: ''
+reviewed: 3ae80974e109ee93f6105cb60ecca1af
+text: |
+  **Shall** initialize all members to their default values.

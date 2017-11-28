@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.0
+links: []
+normative: false
+ref: ''
+reviewed: 91a411177beebe8121b697463a8bee48
+text: |
+  ```RestInterface``` virtual base class

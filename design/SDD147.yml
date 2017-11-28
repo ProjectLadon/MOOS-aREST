@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.3.4.5
+links: []
+normative: true
+ref: ''
+reviewed: af448a1e19583661d9fb3054a1c6b300
+text: |
+  If the ```value``` otherwise contains JSON, it **shall** pass it to ```jsonDispatch``` and return the result.

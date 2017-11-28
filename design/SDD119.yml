@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.9.0
+links: []
+normative: false
+ref: ''
+reviewed: a2c46111fbdaa0997f0cb1c8795d570c
+text: |
+  ```digitalWriteSchema```

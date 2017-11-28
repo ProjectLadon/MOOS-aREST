@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.5.0
+links: []
+normative: false
+ref: ''
+reviewed: 2e65312395514c17a6cf2701c5b1183d
+text: |
+  ```variablePollPeriod```

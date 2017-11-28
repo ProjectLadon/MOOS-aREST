@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.1
+links: []
+normative: true
+ref: ''
+reviewed: 7a7ee3d7d7358db2ff5eaf7e639d4735
+text: |
+  This class **shall** be a singleton.

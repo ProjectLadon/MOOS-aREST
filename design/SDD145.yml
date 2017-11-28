@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.3.4.3
+links: []
+normative: true
+ref: ''
+reviewed: 4a219abdb2d6351f74aba2fc572587ab
+text: |
+  If the ```param``` is ```interface```, the ```value``` **shall** be parsed with rapidjson::Parse() and the resulting document **shall** be passed to ```RestInterface::factory()```. If the resulting pointer is not null, it shall be assigned to the ```interface``` member.

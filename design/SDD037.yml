@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.4.1.0
+links: []
+normative: false
+ref: ''
+reviewed: 1ec130f68c108273ff38d1df7a558f92
+text: |
+  ```ifaceType_t getInterfaceType()```

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.4.1.1
+links: []
+normative: true
+ref: ''
+reviewed: f028b8c8f307620adc73cfa6b05ea743
+text: |
+  Takes the name of a configuration file.

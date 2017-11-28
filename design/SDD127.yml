@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.11.2
+links: []
+normative: true
+ref: ''
+reviewed: db2c40d967c06a6c5f6f36c938b48ea7
+text: |
+  Stores schema for the ```RestItem::AnalogWrite``` type

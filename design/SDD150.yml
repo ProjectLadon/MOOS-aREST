@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.3.5.1
+links: []
+normative: true
+ref: ''
+reviewed: 856e1667b9f8b9d2cba1f97f6f7d67d8
+text: |
+  This method **shall** iterate through ```pollList``` calling the ```poll()``` method on each item.

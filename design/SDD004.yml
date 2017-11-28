@@ -1,9 +1,0 @@
-active: true
-derived: false
-level: 2.2.0
-links: []
-normative: false
-ref: ''
-reviewed: null
-text: |
-  The software **shall** define a subclass of ```RestItem``` for each of ```DigitalWrite```, ```DigitalRead```, ```AnalogWrite```, ```AnalogRead```, ```Variable```, and ```Function```.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.4.2.2
+links: []
+normative: true
+ref: ''
+reviewed: df270cbb29ab08dc61a278312e140a85
+text: |
+  Returns the parsed JSON response.

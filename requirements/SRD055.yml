@@ -6,4 +6,4 @@ normative: true
 ref: SRD007.yml
 reviewed: ee2395321ba7a86f6d11410f0e484f1d
 text: |
-  If ```confFile``` is present and points to a valid JSON document, it **shall** be interpreted in the manner define in the referenced section.
+  If ```confFile``` is present and points to a valid JSON document, it **shall** be interpreted as a JSON array of objects described in the referenced section.

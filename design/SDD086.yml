@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.8
+links: []
+normative: true
+ref: ''
+reviewed: 7dc19176d12044bc7b97058a2b273cc6
+text: |
+  ```RestItem::Variable``` class

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.2.4.1.1
+links: []
+normative: true
+ref: ''
+reviewed: e35617f991059b8cf67a8bd755b7b74b
+text: |
+  This constructor **shall** take a JSON object ```d``` conforming to schema/interface_schema.json and populate the members of this object.

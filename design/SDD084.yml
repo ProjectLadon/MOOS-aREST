@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.6
+links: []
+normative: true
+ref: ''
+reviewed: 714062f7f84d8ab988c6f474b84b4742
+text: |
+  ```RestItem::AnalogRead``` class

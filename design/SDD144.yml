@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.3.4.2
+links: []
+normative: true
+ref: ''
+reviewed: e365cf92c97020fde38e35aa8b29b8c2
+text: |
+  If ```param``` names an ```int``` member and ```value``` contains an int value, this method **shall** populate that member.

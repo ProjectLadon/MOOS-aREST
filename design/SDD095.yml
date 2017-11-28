@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.2.3
+links: []
+normative: true
+ref: ''
+reviewed: 16fe2cf76f99b67a3158e860b558924d
+text: |
+  Contains a pointer to the interface used by this configuration

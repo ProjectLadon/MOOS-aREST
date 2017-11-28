@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.4.2.3
+links: []
+normative: true
+ref: ''
+reviewed: 18531e6d08f0dedb1c17d33b599ede73
+text: |
+  Otherwise, pass ```d``` to ```RestItem::factory()```. If the result is a valid pointer, it **shall** be added to the end of ```pollList``` and this method **shall** return ```true```.

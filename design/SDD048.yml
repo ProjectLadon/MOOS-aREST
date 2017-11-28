@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.5.1.0
+links: []
+normative: false
+ref: ''
+reviewed: 6242b6a9d1e041adf6a0e3b8c060029b
+text: |
+  ```RestInterface (string t)```

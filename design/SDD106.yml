@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.5.1
+links: []
+normative: true
+ref: ''
+reviewed: b3d5c0996100593b64130e6ff789ffb1
+text: |
+  Type ```int```

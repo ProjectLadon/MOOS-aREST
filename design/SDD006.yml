@@ -1,9 +1,9 @@
 active: true
 derived: false
-level: 2.2.2
+level: 2.5.5.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 6e7236c783b4be2b7460acab9dcbcf37
 text: |
-  The classes ```digitalRead```, ```analogRead```, and ```variable``` **shall** all implement a method with the signature ```bool poll(void)```. This method **shall** fetch the named item from the target and return ```true``` if it has been successfully retrieved.
+  ```RestItem``` **shall** have a virtual method with the signature ```bool poll(void)```. This method **shall** fetch and/or write the object's associated data from or to the target and return ```true``` if it has been successfully executed.

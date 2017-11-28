@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.4.1.3
+links: []
+normative: true
+ref: ''
+reviewed: b43fa2ac3f4c4e6388757c5c570c8825
+text: |
+  Calls ```jsonDispatch``` against each member of the JSON array and returns ```true``` if and only if all calls return ```true```.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.4.3.2
+links: []
+normative: true
+ref: ''
+reviewed: 9c3619589a3738352e5a1bc7b1e38d5d
+text: |
+  Returns a pointer to a new ```RestInterface``` object defined by ```d```.

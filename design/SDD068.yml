@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.2.4.1.3
+links: []
+normative: true
+ref: ''
+reviewed: b46fa67b6f50af95c2676cc5c3a56cdb
+text: |
+  Throws a ```std::invalid_argument``` exception if the interface type in ```d``` does not match ```interfaceType```.

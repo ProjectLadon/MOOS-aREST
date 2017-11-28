@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.3.1.5
+links: []
+normative: true
+ref: ''
+reviewed: e583220d6622c2c2fda953d17d54afb3
+text: |
+  ```virtual bool equals(RestItem* r)```

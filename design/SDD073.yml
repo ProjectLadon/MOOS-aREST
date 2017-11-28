@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.3.0
+links: []
+normative: false
+ref: ''
+reviewed: 68a3010c4f5e03747e3e168861c41951
+text: |
+  ```RestItem::RestItem``` virtual base class

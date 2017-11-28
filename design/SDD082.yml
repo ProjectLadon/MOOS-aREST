@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.4
+links: []
+normative: true
+ref: ''
+reviewed: fa358aa873308e1e82ad865e951bb4d1
+text: |
+  ```RestItem::DigitalRead``` class

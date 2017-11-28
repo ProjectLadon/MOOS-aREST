@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.1.4.2.3
+links: []
+normative: true
+ref: ''
+reviewed: 9c07ef010bcf551334ac72d71a2f32a9
+text: |
+  Returns an empty JSON document if there is no response.

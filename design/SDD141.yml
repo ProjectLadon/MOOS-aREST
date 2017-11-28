@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.3.3.1
+links: []
+normative: true
+ref: ''
+reviewed: bae8a98cb08e4931a20e014066c0d4fc
+text: |
+  Returns true if and only if ```interface``` contains a pointer to a valid ```RestInterface``` object.

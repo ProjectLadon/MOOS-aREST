@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 1.7
+links: []
+normative: true
+ref: ''
+reviewed: 9671cbebec5da4eb9762b90344c6a7b3
+text: |
+  The cmake list **shall** generate a gtest target called ```unit_tests```.

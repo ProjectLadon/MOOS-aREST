@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.2.13.1
+links: []
+normative: true
+ref: ''
+reviewed: 899e7169b534856e37dfd22ceea442e0
+text: |
+  Type ```rapidjson::Document```

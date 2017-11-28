@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.3.1.2
+links: []
+normative: true
+ref: ''
+reviewed: 7d121b8c87408a3dbf6d567eead6fddd
+text: |
+  ```static RestItem* factory(rapidjson::Document d)```
