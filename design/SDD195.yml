@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.4.1.1.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  Return the value of the ```mytype``` argument passed in at construction.

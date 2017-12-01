@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.6.2.2.4
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  This method **shall** return the result of the aREST request.

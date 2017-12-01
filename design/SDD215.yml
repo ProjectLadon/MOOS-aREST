@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.4.3.1.2
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  ```mytype``` **shall** be equal to a member of ```typeList```. This comparison **shall** be case insensitive.

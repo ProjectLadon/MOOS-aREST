@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.8.1.6
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  ```int max``` **shall** store the value of the ```maxValue``` element in the configuration JSON, if present. If it not present, this **shall** default to 255.

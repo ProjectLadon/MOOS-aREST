@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.10.2.1.4
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  If the value of ```variableType``` is STRING, the response in the JSON **must** be a string value. If it is not, this method **shall** return ```false```.

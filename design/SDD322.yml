@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.9.3.1.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  This constructor **shall** confirm that ```d``` conforms to schema/variable_schema.json. If it does not, this constructor **shall** throw a ```std::invalid_argument``` exception.

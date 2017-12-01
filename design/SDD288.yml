@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.8.2.2.2
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  If it is equal, then this method **shall** determine whether the message type is BINARY. If it is anything else, it **shall** return ```false```.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.3.6.5.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  This factory method **shall** construct a ```FunctionParameter``` object based on the specialization specified by ```inputVariableType``` and return a pointer to it.

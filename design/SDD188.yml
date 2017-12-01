@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.3.6.4
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  ```bool subscribe()``` **shall** register for the MOOS variable named in ```variableName``` and return ```true``` if successful.

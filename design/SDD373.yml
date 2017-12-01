@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 5.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  The ```OnStartUp()``` method **shall** iterate through the incoming mail list and pass each element of the list to the ```Configuration::procMail()``` method in turn.

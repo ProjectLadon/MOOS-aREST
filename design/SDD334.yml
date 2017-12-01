@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.10.1.6
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  ```std::list<RestItem::FunctionParameter*> parameters``` **shall** store the listed parameters of the function.

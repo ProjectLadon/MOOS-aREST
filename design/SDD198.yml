@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.4.1.4.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  This method **shall** parse the incoming JSON object. If it conforms to one of the stored schemas, it **shall** build an object of the corresponding sub-class and return a pointer to it.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.3.6.2.2
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  If ```msg.GetKey()``` is not equal to ```variableName```, this method **shall** return ```false```. This comparison **shall** be case-insensitive.

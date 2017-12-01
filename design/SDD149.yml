@@ -6,4 +6,4 @@ normative: false
 ref: ''
 reviewed: f0653567ad563a3eb1d87f78cbaef9db
 text: |
-  ```void pollList()```
+  ```void poll()```

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.10.2.2.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  If ```parameters``` is empty, this method **shall** return ```false```.

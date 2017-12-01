@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.4.1.4.2
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  If the construction fails or the JSON does not conform to one of the schemas, this method **shall** return ```nullptr```.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.7.2.1.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  This method **shall** first calculate the number of times it has been called since the last time it made a successful aREST request. If this value is less than ```Configuration::analogPollPeriod```, this method **shall** increment ```pollCount``` and return ```true```.

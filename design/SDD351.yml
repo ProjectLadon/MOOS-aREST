@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.10.2.4.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  The method **shall** call the ```subscribe()``` method on each member of the ```parameters``` list.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 6.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  The ```Iterate()``` method **shall** call ```Configuration::poll()```.

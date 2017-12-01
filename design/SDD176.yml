@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.3.4.2
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  ```std::string variableName``` **shall** store the variable name this parameter subscribes to.

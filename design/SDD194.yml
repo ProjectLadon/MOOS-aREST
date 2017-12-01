@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.3.7.2.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  This constructor **shall** populate ```name``` and ```variableName``` from the corresponding arguments.

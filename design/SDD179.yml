@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.3.5.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  ```void encode(<T> val)``` **shall** URL encode ```val``` and store it in ```encodedValue```. This function **must** be explicitly implemented for each specialization, namely ```bool```, ```double```, and ```std::string```.

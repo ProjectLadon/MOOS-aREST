@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.8.2.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  ```bool poll()``` **shall** return ```true``` with no other effect.

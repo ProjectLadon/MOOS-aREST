@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.5.3.8.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  This method **shall** call the ```setMode()``` method of each member of ```pollList```.

@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.7.1.1.2
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  Incremented each time the ```poll()``` method is called.

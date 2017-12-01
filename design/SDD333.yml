@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.10.1.5
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  ```std::string returnType``` **shall** store the value in the ```returnType``` element of the configuration JSON.

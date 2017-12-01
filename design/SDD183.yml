@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.3.6.2.1
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  This method **must** be explicitly implemented for each specialization, namely ```bool```, ```double```, and ```std::string```.

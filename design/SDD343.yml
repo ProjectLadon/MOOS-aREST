@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.10.2.1.7
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  If either of the two preceeding conditions are true, this method **shall** publish the returned value to ```variableName```, increment ```pollCount```, set ```lastPoll``` equal to ```pollCount```, and return ```true```. Otherwise, it **shall** return ```false```.

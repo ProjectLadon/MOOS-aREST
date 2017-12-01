@@ -1,0 +1,9 @@
+active: true
+derived: false
+level: 2.4.4.1.9.2
+links: []
+normative: true
+ref: ''
+reviewed: null
+text: |
+  This method **shall** be implemented such that it returns ```true``` if and only if the argument is to an object with the same sub-class as the calling object and all data items are equal.
