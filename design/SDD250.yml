@@ -4,6 +4,6 @@ level: 2.4.6.2.4
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 0b92163283c9bfbe526bb573e29285bc
 text: |
   ```bool subscribe()``` **shall** subscribe to the variable named by ```variableName```.

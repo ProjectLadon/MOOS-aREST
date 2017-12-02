@@ -4,6 +4,6 @@ level: 2.4.10.2.1.2
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 489bb9d2f0b82730221156ea4685989a
 text: |
   This method **shall** construct and execute an aREST request of the form ```/<function>?params=<parameters>```, where the ```<parameters>``` item is created by concatenating the result of calling ```geturlencoded``` against each element of the ```parameters``` list.

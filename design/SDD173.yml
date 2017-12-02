@@ -4,6 +4,6 @@ level: 2.4.3.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 449020657c78fc3abfe5ef4397a1775d
 text: |
   This class **shall** be specialized for ```bool```, ```double```, and ```std::string```.

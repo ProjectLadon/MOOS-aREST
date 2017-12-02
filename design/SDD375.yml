@@ -4,6 +4,6 @@ level: 6.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: bdfeecb7caffe4c6cae7cce682c8fc08
 text: |
   The ```Iterate()``` method **shall** call ```Configuration::poll()```.

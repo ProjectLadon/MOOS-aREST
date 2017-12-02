@@ -4,6 +4,6 @@ level: 2.4.4.1.8.0
 links: []
 normative: false
 ref: ''
-reviewed: null
+reviewed: 920ec5cc19d4ac988c2e852ee81855e0
 text: |
   ```virtual bool subscribe()```

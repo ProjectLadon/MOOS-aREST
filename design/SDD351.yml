@@ -4,6 +4,6 @@ level: 2.4.10.2.4.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 12cd64a74bc9ceac768140c35f0c0ed4
 text: |
   The method **shall** call the ```subscribe()``` method on each member of the ```parameters``` list.

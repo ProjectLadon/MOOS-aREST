@@ -4,6 +4,6 @@ level: 2.4.8.1.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 0e89c815319f492371277787b0e5ce63
 text: |
   ```int lastValue``` **shall** store the last value successfully written to the aREST target.

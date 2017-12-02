@@ -4,6 +4,6 @@ level: 2.4.10.2.1.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 01606e4b8753daba65c576cabb8f3721
 text: |
   If the aREST request fails, return ```false```.

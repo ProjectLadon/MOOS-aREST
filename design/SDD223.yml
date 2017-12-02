@@ -4,6 +4,6 @@ level: 2.4.5.1.2.2
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 89ae24287e3c65b15280fba18b97c75a
 text: |
   Set equal to ```pollCount``` every time ```poll()``` successfully reads the target pin.

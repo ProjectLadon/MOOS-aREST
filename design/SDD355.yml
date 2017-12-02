@@ -4,6 +4,6 @@ level: 2.4.10.3.1.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 7da2f6c6edf8a05449582b55b38791e2
 text: |
   This constructor **shall** confirm that ```d``` conforms to schema/function_schema.json. If it does not, this constructor **shall** throw a ```std::invalid_argument``` exception.

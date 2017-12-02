@@ -4,6 +4,6 @@ level: 2.4.3.6.2.0
 links: []
 normative: false
 ref: ''
-reviewed: null
+reviewed: 4ec344c0b75a69fb9703628794eb93b4
 text: |
   ```bool procMail(CMOOSMsg &msg)```

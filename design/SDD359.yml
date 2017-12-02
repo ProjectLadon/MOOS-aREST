@@ -4,6 +4,6 @@ level: 2.5.3.7.0
 links: []
 normative: false
 ref: ''
-reviewed: null
+reviewed: dbc6f95b7f1608d9f9cd51ac26072ab3
 text: |
   ```bool subscribe()```

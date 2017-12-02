@@ -4,6 +4,6 @@ level: 2.5.3.7.2
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 792fcc7b3b7c6f0843944662dbedf9a1
 text: |
   This method **shall** return the logical and of the return values of the ```subscribe()``` methods of each member.

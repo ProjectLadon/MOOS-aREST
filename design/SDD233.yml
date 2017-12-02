@@ -4,6 +4,6 @@ level: 2.4.5.2.4
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: f6e441cf52f783fa00bed64e9fea309a
 text: |
   ```bool subscribe()``` **shall** return ```true``` with no other effect.

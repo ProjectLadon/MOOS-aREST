@@ -4,6 +4,6 @@ level: 2.4.8.2.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 8fc02b6b014bcda88cf5f4f5f7db7de7
 text: |
   ```bool setMode()``` **shall** construct and execute an aREST request of the form ```/mode/<pin>/o``` and return ```true``` if successful. Otherwise, it **shall** return false.

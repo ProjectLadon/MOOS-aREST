@@ -4,6 +4,6 @@ level: 2.4.5.2.1.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: f3812cda419b7956975dcd2c28e18f88
 text: |
   If the request is successful, this method **shall** publish the returned value to the variable named in ```variableName```, increment ```pollCount```, set ```lastPoll``` equal to ```pollCount```, and return ```true```. Otherwise, it **shall** return ```false```.

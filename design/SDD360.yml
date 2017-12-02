@@ -4,6 +4,6 @@ level: 2.5.3.7.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: d8a3ccde7d683dec710bcbd4e03b6b4c
 text: |
   This method **shall** call the ```subscribe()``` method of each member of ```pollList```.

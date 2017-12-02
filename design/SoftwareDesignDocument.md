@@ -1,38 +1,52 @@
-# 1.0 SDD001 {#SDD001 }
-
-Dependencies & Build Configuration
+# 1.0 Dependencies & Build Configuration {#SDD001 }
 
 ## 1.1 SDD017 {#SDD017 }
 
 This software **shall** be implemented as a MOOS Appcasting App as describe in the [MOOS-IvP wiki](http://oceanai.mit.edu/moos-ivp/pmwiki/pmwiki.php).
 
+*Parent links: SRD035*
+
 ## 1.2 SDD018 {#SDD018 }
 
 This software **shall** use [rapidjson](http://www.rapidjson.org) as the JSON parse/unparse library.
+
+*Parent links: SRD036*
 
 ## 1.3 SDD019 {#SDD019 }
 
 This software **shall** use libcurl as the HTTP client.
 
+*Parent links: SRD037*
+
 ## 1.4 SDD020 {#SDD020 }
 
 This software **shall** be compiled using cmake.
+
+*Parent links: SRD035*
 
 ## 1.5 SDD021 {#SDD021 }
 
 Unit tests **shall** be written using the gtest suite.
 
+*Parent links: SRD079*
+
 ## 1.6 SDD022 {#SDD022 }
 
 The cmake list **shall** generate a MOOS executable target.
+
+*Parent links: SRD035*
 
 ## 1.7 SDD023 {#SDD023 }
 
 The cmake list **shall** generate a gtest target called ```unit_tests```.
 
+*Parent links: SRD079*
+
 ## 1.8 SDD024 {#SDD024 }
 
 The cmake list **shall** generate a target that compiles and runs the tests called ```test```.
+
+*Parent links: SRD079*
 
 # 2.0 Data Types {#SDD002 }
 
@@ -42,19 +56,31 @@ The cmake list **shall** generate a target that compiles and runs the tests call
 
 The base class **shall** be virtual.
 
-### 2.1.2 This class **shall** define an enum ```ifaceType_t``` that contains an entry for each sub-class. {#SDD027 }
+*Parent links: SRD004*
+
+### 2.1.2 SDD027 {#SDD027 }
+
+This class **shall** define an enum ```ifaceType_t``` that contains an entry for each sub-class.
+
+*Parent links: SRD003, SRD004*
 
 #### 2.1.2.1 SDD028 {#SDD028 }
 
 ```Base``` -- the default value
 
+*Parent links: SRD003, SRD004*
+
 #### 2.1.2.2 SDD029 {#SDD029 }
 
 ```RestNetwork``` -- value indicating an HTTP interface
 
+*Parent links: SRD003, SRD004*
+
 #### 2.1.2.3 SDD030 {#SDD030 }
 
 ```RestSerial``` -- value indicating a serial interface
+
+*Parent links: SRD003, SRD004*
 
 ### 2.1.3 Members {#SDD031 }
 
@@ -64,13 +90,19 @@ The base class **shall** be virtual.
 
 Type shall be ```ifaceType_t```.
 
+*Parent links: SRD004*
+
 ##### 2.1.3.1.2 SDD034 {#SDD034 }
 
 Defaults to ```Base```.
 
+*Parent links: SRD004*
+
 ##### 2.1.3.1.3 SDD035 {#SDD035 }
 
 Private and written only at construction.
+
+*Parent links: SRD004*
 
 ### 2.1.4 Methods {#SDD036 }
 
@@ -79,6 +111,8 @@ Private and written only at construction.
 ##### 2.1.4.1.1 SDD038 {#SDD038 }
 
 Returns value of ```interfaceType```.
+
+*Parent links: SRD003, SRD004*
 
 #### 2.1.4.2 ```std::unique_ptr<rapidjson::Document> makeRequest(string request)``` {#SDD039 }
 
@@ -90,9 +124,13 @@ This **shall** execute the aRest request using the provided request string
 
 Returns the parsed JSON response.
 
+*Parent links: SRD003*
+
 ##### 2.1.4.2.3 SDD042 {#SDD042 }
 
 Returns an empty JSON document if there is no response.
+
+*Parent links: SRD003*
 
 #### 2.1.4.3 ```static RestInterface* factory(rapidjson::Document d)``` {#SDD043 }
 
@@ -100,13 +138,19 @@ Returns an empty JSON document if there is no response.
 
 Takes a JSON document complying with the schema defined in schema/interface_schema.json.
 
+*Parent links: SRD003*
+
 ##### 2.1.4.3.2 SDD045 {#SDD045 }
 
 Returns a pointer to a new ```RestInterface``` object defined by ```d```.
 
+*Parent links: SRD003*
+
 ##### 2.1.4.3.3 SDD046 {#SDD046 }
 
 Returns a null pointer if ```d``` does not comply with the schema.
+
+*Parent links: SRD003*
 
 ### 2.1.5 Constructor(s) {#SDD047 }
 
@@ -116,11 +160,15 @@ Returns a null pointer if ```d``` does not comply with the schema.
 
 Parses value of t into the enumerated elements of ifaceType_t.
 
+*Parent links: SRD003, SRD004*
+
 ## 2.2 ```RestNetwork``` class {#SDD050 }
 
 ### 2.2.1 SDD051 {#SDD051 }
 
 Sub-class of ```RestInterface```
+
+*Parent links: SRD004*
 
 ### 2.2.2 Members {#SDD052 }
 
@@ -130,17 +178,25 @@ Sub-class of ```RestInterface```
 
 Type ```std::string```
 
+*Parent links: SRD004*
+
 ##### 2.2.2.1.2 SDD055 {#SDD055 }
 
 Private
+
+*Parent links: SRD003, SRD004*
 
 ##### 2.2.2.1.3 SDD056 {#SDD056 }
 
 Names the target URL to be used by requests made using this interface.
 
+*Parent links: SRD003, SRD004*
+
 ##### 2.2.2.1.4 SDD057 {#SDD057 }
 
 Written only at construction
+
+*Parent links: SRD003*
 
 ### 2.2.3 Methods {#SDD058 }
 
@@ -149,6 +205,8 @@ Written only at construction
 ##### 2.2.3.1.1 SDD060 {#SDD060 }
 
 Cocatenates ```url``` and ```request``` and uses libcurl to transmit the request.
+
+*Parent links: SRD037*
 
 ##### 2.2.3.1.2 SDD061 {#SDD061 }
 

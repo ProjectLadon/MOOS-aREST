@@ -4,6 +4,6 @@ level: 3.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 3f9363da6d86dfe4f2cd330b4fa4e99e
 text: |
   The ```OnStartUp()``` method **shall** iterate through the MOOS configuration file and pass each line of the configuration file to the ```Configuration::populate()``` method in turn.

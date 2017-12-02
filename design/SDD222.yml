@@ -4,6 +4,6 @@ level: 2.4.5.1.2.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 3282eb34a59a73bdcec59af34a96909f
 text: |
   Initialized to zero

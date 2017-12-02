@@ -4,6 +4,6 @@ level: 2.4.7.2.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 4d477abb2244c7c35a2c109b76d88f6b
 text: |
   ```bool setMode()``` **shall** return ```true``` with no other effect.

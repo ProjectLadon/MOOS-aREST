@@ -4,6 +4,6 @@ level: 2.4.5.3.1.0
 links: []
 normative: false
 ref: ''
-reviewed: null
+reviewed: 5f371414c37e87302234ae129142f940
 text: |
   ```DigitalRead(rapidjson::Document d)```

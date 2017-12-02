@@ -4,6 +4,6 @@ level: 3.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 51c4ffe0540cef9ec1698d08980d9811
 text: |
   After all configuration lines have been processed, this software **shall** call ```Configuration::dedupe()```.

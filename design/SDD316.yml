@@ -4,6 +4,6 @@ level: 2.4.9.2.1.6
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: a932172452c78f99a1acbd09bfe35e2d
 text: |
   If either of the two preceeding conditions are true, this method **shall** publish the returned value to ```variableName```, increment ```pollCount```, set ```lastPoll``` equal to ```pollCount```, and return ```true```. Otherwise, it **shall** return ```false```.

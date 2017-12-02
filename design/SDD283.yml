@@ -4,6 +4,6 @@ level: 2.4.8.1.7
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 137f6e4ad7463f6fdeb11c15c0b99234
 text: |
   ```int min``` *shall** store the value of the ```minValue``` element in the configuration JSON, if present. If it not present, this **shall** default to 0.

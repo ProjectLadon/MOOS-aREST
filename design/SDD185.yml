@@ -4,6 +4,6 @@ level: 2.4.3.6.2.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 0a0eddd716323f057705edf552c2ce5b
 text: |
   If it is equal, then this method **shall** determine whether the message type matches the specialization of this method. If it is anything else, it **shall** return ```false```.

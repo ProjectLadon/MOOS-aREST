@@ -4,6 +4,6 @@ level: 2.4.3.6.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 9c297dc1ecd4c197bbe0d18c1b65f780
 text: |
   This class **shall** define a const reader method for each private member.

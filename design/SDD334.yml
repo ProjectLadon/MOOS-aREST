@@ -4,6 +4,6 @@ level: 2.4.10.1.6
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: b193b080e3a92cb2102847d392f2df58
 text: |
   ```std::list<RestItem::FunctionParameter*> parameters``` **shall** store the listed parameters of the function.

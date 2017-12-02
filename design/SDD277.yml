@@ -4,6 +4,6 @@ level: 2.4.8.1.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 724cd2bea98f287ea60cef346b66cf4d
 text: |
   ```int pin``` **shall** store the value in the ```pin``` element of the configuration JSON.

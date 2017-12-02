@@ -4,6 +4,6 @@ level: 2.4.9.2.2
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: c3ea650112f7e65696ef656da4957fb3
 text: |
   ```bool procMail(CMOOSMsg &msg)``` **shall** return ```false``` with no other effect.

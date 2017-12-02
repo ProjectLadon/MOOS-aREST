@@ -4,6 +4,6 @@ level: 2.4.10.1.5
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 125a22942bd3cdf87a838783a24e38d5
 text: |
   ```std::string returnType``` **shall** store the value in the ```returnType``` element of the configuration JSON.

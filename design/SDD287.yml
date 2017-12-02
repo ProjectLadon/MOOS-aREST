@@ -4,6 +4,6 @@ level: 2.4.8.2.2.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: c4f1576d167158af7bca54dd26e9c9cc
 text: |
   If ```msg.GetKey()``` is not equal to ```variableName```, this method **shall** return ```false```. This comparison **shall** be case-insensitive.

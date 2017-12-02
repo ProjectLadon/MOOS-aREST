@@ -1,7 +1,9 @@
 active: true
 derived: false
 level: 2.1.2.2
-links: []
+links:
+- SRD003: 744e3a3cde7912b64756f64ace1ffb84
+- SRD004: b7f7ad6af63c4bd64ea120d3c28e5ec5
 normative: true
 ref: ''
 reviewed: e048f3e151631c6570a7999eae27f1a8

@@ -4,6 +4,6 @@ level: 2.4.10.1.4
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 7445dc422e5f587e03f30e93d533c978
 text: |
   ```std::string returnName``` **shall** store the value in the ```returnVariable``` element of the configuration JSON.

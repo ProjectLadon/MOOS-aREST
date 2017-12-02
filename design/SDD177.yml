@@ -4,6 +4,6 @@ level: 2.4.3.4.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: aaf7d6753b98bc472c4dc5f7389e4809
 text: |
   ```std::string encodedValue``` **shall** store the incoming variable value URL encodede for transmission.

@@ -4,6 +4,6 @@ level: 2.4.10.2.2.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: d078ede21782075e20744f8b0eb98532
 text: |
   If any of these calls return ```true```, this method **shall** set ```lastPoll``` equal to 0 and return ```true```.

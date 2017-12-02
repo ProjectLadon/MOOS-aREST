@@ -4,6 +4,6 @@ level: 2.4.7.3.1.2
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: e963a31157060227ac9084e1154b1dbf
 text: |
   This constructor **shall** initialize all data members as described.

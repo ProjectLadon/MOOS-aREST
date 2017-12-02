@@ -4,6 +4,6 @@ level: 2.4.8.1.2
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: a2c1659972f7c59da2732c6fae1fdabb
 text: |
   ```std::string variableName``` **shall** store the value in the ```variable``` element of the configuration JSON.

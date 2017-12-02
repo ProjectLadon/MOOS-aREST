@@ -4,6 +4,6 @@ level: 2.4.10.2.2.4
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 3dda4b99712a134802c0e45700d5d24c
 text: |
   If none return ```true```, this method **shall** return ```false```.

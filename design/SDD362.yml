@@ -4,6 +4,6 @@ level: 2.5.3.8.0
 links: []
 normative: false
 ref: ''
-reviewed: null
+reviewed: c13ad0a80e6708fd81240a8bdd52933e
 text: |
   ```bool setMode()```

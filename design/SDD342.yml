@@ -4,6 +4,6 @@ level: 2.4.10.2.1.6
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: c8a2d336e4706157ad9f3fd2b743ac10
 text: |
   If the value of ```variableType``` is BINARY, the response in the JSON **must** be a boolean value. If it is not, this method **shall** return ```false```.

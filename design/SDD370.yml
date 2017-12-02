@@ -4,6 +4,6 @@ level: 3.4
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 27f7200804d542d89926b66d2b457f68
 text: |
   At the end of the configuration process, ```OnStartUp()``` shall call the ```Configuration``` object's bool operator. If it returns ```false```, this program **shall** log an error and exit.

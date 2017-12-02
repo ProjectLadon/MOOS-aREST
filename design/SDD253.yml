@@ -4,6 +4,6 @@ level: 2.4.6.3.1.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: cedda4a82eab2e4399d4e144aff2355c
 text: |
   This constructor **shall** confirm that ```d``` conforms to schema/digitalwrite_schema.json. If it does not, this constructor **shall** throw a ```std::invalid_argument``` exception.

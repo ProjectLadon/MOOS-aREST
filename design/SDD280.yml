@@ -4,6 +4,6 @@ level: 2.4.8.1.4
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 9df5ec51c77a13104031ab78a68851c6
 text: |
   ```double gain``` **shall** store the value of the ```gain``` element in the configuration JSON, if present. If it is not present, this **shall** default to 1.0f.

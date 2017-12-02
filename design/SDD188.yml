@@ -4,6 +4,6 @@ level: 2.4.3.6.4
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 6586a24cc752eb131857dbfaa7b0dbd2
 text: |
   ```bool subscribe()``` **shall** register for the MOOS variable named in ```variableName``` and return ```true``` if successful.

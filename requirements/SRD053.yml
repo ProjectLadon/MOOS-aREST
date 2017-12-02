@@ -1,7 +1,8 @@
 active: true
 derived: false
 level: 1.2.4.1
-links: []
+links:
+- SRD012: 2517b57f0b645aa9892db0f929dc4b95
 normative: true
 ref: SRD012.yml
 reviewed: 0ed2ebc2fe1d7606b7924beaa2040327

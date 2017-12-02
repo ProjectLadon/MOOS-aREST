@@ -4,6 +4,6 @@ level: 5.2
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 2ec5edc2f2cf0239f4596ce020287ac5
 text: |
   If ```Configuration::procMail()``` returns ```false```, the offending line **shall** be passed to ```reportRunWarning()``` with the value ```"Unhandled Mail: " + key```.

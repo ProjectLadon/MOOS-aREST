@@ -4,6 +4,6 @@ level: 7.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 308e42711b9eb244545d48bf1abfde45
 text: |
   Using the reader, ```buildReport()``` **shall** iterate through the contents of ```Configuration::pollList``` and add the results of ```reportHeader()``` and ```reportLine()``` from each member.

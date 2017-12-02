@@ -4,6 +4,6 @@ level: 2.4.3.6.2.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 28d744425de127404b4739028253b7c8
 text: |
   This method **must** be explicitly implemented for each specialization, namely ```bool```, ```double```, and ```std::string```.

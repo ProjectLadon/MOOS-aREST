@@ -4,6 +4,6 @@ level: 2.4.10.2.1.5
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 6b2f606a61a538c5e6129f129c9cb708
 text: |
   If the value of ```variableType``` is DOUBLE, the response in the JSON **must** be a numerical value. If it is not, this method **shall** return ```false```.

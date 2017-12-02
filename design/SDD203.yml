@@ -4,6 +4,6 @@ level: 2.4.4.1.6.2
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 691494ca3c89ebdb309e694d28ea6291
 text: |
   This method **shall** look for new mail and write to the aREST target if appropriate. See implementation requirements for details.

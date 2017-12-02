@@ -4,6 +4,6 @@ level: 2.4.9.2.1.4
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: c9928e2722399cb59c3d61058eea161a
 text: |
   If the value of ```variableType``` is STRING, the response in the JSON **must** be a string value. If it is not, this method **shall** return ```false```.

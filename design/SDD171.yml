@@ -4,6 +4,6 @@ level: 2.4.3.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: dedc2c082d32153ff924a967b808c42e
 text: |
   This class stores the parameters of an input variable for the ```RestItem::Function``` class.

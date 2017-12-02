@@ -4,6 +4,6 @@ level: 2.4.8.2.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 49b70fb49a36d2941e8ac23250c48c37
 text: |
   ```bool poll()``` **shall** return ```true``` with no other effect.

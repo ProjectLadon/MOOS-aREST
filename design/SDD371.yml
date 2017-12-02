@@ -4,6 +4,6 @@ level: 4.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: c9f5dc561781504bedb740298cf2e7f5
 text: |
   The ```OnConnectToServer()``` method **shall** call ```Configuration::subscribe()``` and log the result.

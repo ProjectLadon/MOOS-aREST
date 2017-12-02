@@ -4,6 +4,6 @@ level: 2.4.3.7.2.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 8faf9ca472ee6953d197a7f669af4171
 text: |
   This constructor **shall** populate ```name``` and ```variableName``` from the corresponding arguments.

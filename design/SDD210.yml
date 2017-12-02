@@ -4,6 +4,6 @@ level: 2.4.4.1.9.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: fa3b7821e9d4f34c8d1d2fc949ed3d91
 text: |
   This method **shall** be pure virtual.

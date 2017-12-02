@@ -4,6 +4,6 @@ level: 2.4.6.2.2.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 3288df73c055b97bc4babf2fd11f8d9d
 text: |
   If the earlier conditions pass, this method shall construct and execute an aREST request of the form ```/digital/<pin>/<value>```, where ```<value>``` shall 1 for ```true``` and 0 for ```false```.

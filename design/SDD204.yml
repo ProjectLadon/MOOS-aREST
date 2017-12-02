@@ -4,6 +4,6 @@ level: 2.4.4.1.7.0
 links: []
 normative: false
 ref: ''
-reviewed: null
+reviewed: cefc437b7feed1a9e5d73861ddc66e6f
 text: |
   ```virtual bool setMode()```

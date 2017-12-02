@@ -4,6 +4,6 @@ level: 2.4.3.2
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 82c6fcd879e789ee54d10d163dff8cae
 text: |
   This class **shall** be a template class.

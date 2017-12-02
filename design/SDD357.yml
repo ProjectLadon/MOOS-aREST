@@ -4,6 +4,6 @@ level: 2.4.10.3.1.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 2214aa74b79cbc5435db60e94fbc9664
 text: |
   This constructor shall call ```RestItem::FunctionParameter::functionParameterFactory()``` against each element of the ```parameters``` JSON array, if present, and store the results in the ```parameters``` member.

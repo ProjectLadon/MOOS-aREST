@@ -4,6 +4,6 @@ level: 2.4.9.2.1.0
 links: []
 normative: false
 ref: ''
-reviewed: null
+reviewed: 9579b290a51b734aa5612e777825147b
 text: |
   ```bool poll()```

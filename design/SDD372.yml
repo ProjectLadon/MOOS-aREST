@@ -4,6 +4,6 @@ level: 4.2
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 7093aab0e61f588bfa86b2e76e7b24eb
 text: |
   The ```OnConnectToServer()``` method **shall** call ```Configuration::setMode()``` and log the result.

@@ -4,6 +4,6 @@ level: 2.4.4.2.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: a602e8c082be4aa1df9ba164b00650c7
 text: |
   ```const std::vector<std::string> typeList``` **shall** store a list of the valid subclasses of ```RestItem```.

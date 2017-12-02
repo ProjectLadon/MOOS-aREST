@@ -4,6 +4,6 @@ level: 3.2
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 7914316c43dbf50b804c5e6817aeadf9
 text: |
   If ```Configuration::populate()``` returns ```false```, the offending line **shall** be passed to ```reportUnhandledConfigWarning()```.

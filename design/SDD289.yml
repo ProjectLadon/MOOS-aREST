@@ -4,6 +4,6 @@ level: 2.4.8.2.2.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: fe99285a942bfea0c99cf2440e5f06d3
 text: |
   If the earlier conditions pass, this method shall construct and execute an aREST request of the form ```/analog/<pin>/<value>```, where ```<value>``` is equal to the received value times the ```gain```, added to the ```offset```, and bounded by ```max``` and ```min```.

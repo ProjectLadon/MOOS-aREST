@@ -4,6 +4,6 @@ level: 2.4.8.1.5
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: fb298b51a2b42235b0ef117db46f2318
 text: |
   ```int offset``` **shall** store the value of the ```offset``` element in the configuration JSON, if present. If it is not present, this **shall** default to 0.

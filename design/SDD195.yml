@@ -4,6 +4,6 @@ level: 2.4.4.1.1.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: b059c93a9fd708f6698fc35fe8d29afb
 text: |
   Return the value of the ```mytype``` argument passed in at construction.

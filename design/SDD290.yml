@@ -4,6 +4,6 @@ level: 2.4.8.2.2.4
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 3c9a1c486d4c2dd02258dbabc97bd8b5
 text: |
   This method **shall** return the result of the aREST request.

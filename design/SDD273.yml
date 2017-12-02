@@ -4,6 +4,6 @@ level: 2.4.7.3.1.0
 links: []
 normative: false
 ref: ''
-reviewed: null
+reviewed: aa51f3cc20b713a2b81a8b8a5e26ef15
 text: |
   ```AnalogRead(rapidjson::Document d)```

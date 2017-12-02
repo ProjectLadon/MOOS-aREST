@@ -4,6 +4,6 @@ level: 2.4.3.6.3
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 35b41e464cd9e64184af474dc592044b
 text: |
   ```std::string geturlencoded()``` **shall** return ```encodedValue```.

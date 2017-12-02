@@ -4,6 +4,6 @@ level: 2.4.3.6.2.4
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: 69cfccf8ca4add40e0bdaac780bc6fc8
 text: |
   If the earlier conditions pass, this method **shall** pass the incoming value to ```encode()``` and return ```true```.

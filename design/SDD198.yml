@@ -4,6 +4,6 @@ level: 2.4.4.1.4.1
 links: []
 normative: true
 ref: ''
-reviewed: null
+reviewed: ef8dd4d101a496724fe26c26912794d4
 text: |
   This method **shall** parse the incoming JSON object. If it conforms to one of the stored schemas, it **shall** build an object of the corresponding sub-class and return a pointer to it.
