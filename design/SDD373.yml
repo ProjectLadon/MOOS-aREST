@@ -6,4 +6,4 @@ normative: true
 ref: ''
 reviewed: c1b24ac47beb844a2a1017df4965ec22
 text: |
-  The ```OnStartUp()``` method **shall** iterate through the incoming mail list and pass each element of the list to the ```Configuration::procMail()``` method in turn.
+  The ```OnNewMail()``` method **shall** iterate through the incoming mail list and pass each element of the list to the ```Configuration::procMail()``` method in turn.
