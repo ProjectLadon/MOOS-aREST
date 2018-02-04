@@ -40,6 +40,8 @@ ENDFOREACH(LOOP_SCHEMA)
 
 SET(SRC
   aREST.cpp
+  restInterface.cpp
+  restItem.cpp
   aREST_Info.cpp
   main.cpp
   "${JSON_HEADER_FILES}"

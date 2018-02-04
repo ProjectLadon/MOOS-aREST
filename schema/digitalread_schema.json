@@ -7,7 +7,7 @@
 		"pin":{"type":"number"},
 		"variable":{
 			"type":"string",
-			"$comment": "This must be a free variable name; it will be published as a BINARY"
+			"$comment": "This must be a free variable name; it will be published as a DOUBLE"
 		}
 	},
 	"required":["function","pin","variable"]

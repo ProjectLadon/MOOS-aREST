@@ -11,151 +11,257 @@
 #include "MOOS/libMOOS/Thirdparty/AppCasting/AppCastingMOOSApp.h"
 #include "rapidjson/rapidjson.h"
 #include "rapidjson/document.h"
+#include "rapidjson/schema.h"
 #include <cstdarg>
 
-class aRESTItem {
+class RestInterface {
 	public:
-		aRESTItem() {newMail = false;};
-		~aRESTItem() {};
+		RestInterface (std::string t);
+		static std::unique_ptr<RestInterface> restInterfaceFactory(rapidjson::Document &d);
+		virtual std::unique_ptr<rapidjson::Document> makeRequest(std::string request);
+		std::string getInterfaceType() {return interfaceType;};
 
-		static aRESTItem* itemFactory(rapidjson::Document& d);
-
-		virtual bool fetchItem() = 0;
-		virtual bool subscribeVariable(std::string var, ...) = 0;
-		virtual bool readMail(CMOOSMsg &msg) = 0;
-		virtual bool registerVars() = 0;
-
-	protected:
-		std::string fetchSerial(std::string request);
-		std::string fetchURL(std::string request);
-		bool newMail;
+	private:
+		std::string interfaceType;
 };
 
-class DigitalRead : public aRESTItem {
+class RestNetwork : public RestInterface {
 	public:
-		DigitalRead(rapidjson::Document& d);
-		~DigitalRead();
-		bool fetchItem();
-		bool subscribeVariable(std::string var, ...) {return false;};
-		bool readMail(CMOOSMsg &msg) {return false;};
-		bool registerVars() {return false;};
+		RestNetwork(rapidjson::Document &d, std::string type);
+		std::unique_ptr<rapidjson::Document> makeRequest(std::string request);
 
-	protected:
-		std::string varName;
-		bool state;
+	private:
+		std::string url;
+		static size_t writeMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp);
 };
 
-class DigitalWrite : public aRESTItem {
-	public:
-		DigitalWrite(rapidjson::Document& d);
-		~DigitalWrite();
-		bool fetchItem();
-		bool subscribeVariable(std::string var, ...);
-		bool readMail(CMOOSMsg &msg);
-		bool registerVars();
+namespace RestItem {
+	class FunctionParameter {
+		public:
+			static std::unique_ptr<FunctionParameter> functionParameterFactory (rapidjson::Document &d);
+			virtual bool procMail(CMOOSMsg &msg) = 0;
+			bool subscribe(MOOSApp *myself);
 
-	protected:
-		std::string varName;
-		bool state;
-};
+			const std::string &getName() {return name;};
+			const std::string &getVariableName() {return variableName;};
+			const std::string &geturlencoded() {return encodedValue;};
 
-class AnalogRead : public aRESTItem {
-	public:
-		AnalogRead(rapidjson::Document& d);
-		~AnalogRead();
-		bool fetchItem();
-		bool subscribeVariable(std::string var, ...) {return false;};
-		bool readMail(CMOOSMsg &msg) {return false;};
-		bool registerVars() {return false;};
+		protected:
+			std::string name;
+			std::string variableName;
+			std::string encodedValue;
+	};
 
-	protected:
-		uint16_t state;
-};
+	class FunctionParameterDouble {
+		public:
+			FunctionParameterDouble(rapidjson::Document &d);
+			bool procMail(CMOOSMsg &msg);
+		private:
+			void urlencode(double val);
+	};
 
-class AnalogWrite : public aRESTItem {
-	public:
-		AnalogWrite(rapidjson::Document& d);
-		~AnalogWrite();
-		bool fetchItem();
-		bool subscribeVariable(std::string var, ...);
-		bool readMail(CMOOSMsg &msg);
-		bool registerVars();
+	class FunctionParameterString {
+		public:
+			FunctionParameterString(rapidjson::Document &d);
+			bool procMail(CMOOSMsg &msg);
+		private:
+			void urlencode(std::string val);
+	};
 
-	protected:
-		std::string varName;
-		uint16_t state;
-};
+	class RestItem {
+		public:
+			static std::unique_ptr<RestItem> restItemFactory(rapidjson::Document &d);
+			const std::string &myType() {return mytype;};
+			virtual std::list<std::string> reportHeader();
+			virtual std::list<std::string> reportLine();
+			virtual bool poll() = 0;
+			virtual bool procMail(CMOOSMsg &msg) = 0;
+			virtual bool setMode() = 0;
+			virtual bool subscribe(MOOSApp *myself) = 0;
+			virtual bool equals(RestItem *r) = 0;
 
-class Variable : public aRESTItem {
-	public:
-		Variable(rapidjson::Document& d);
-		~Variable();
-		bool fetchItem();
-		bool subscribeVariable(std::string var, ...) {return false;};
-		bool readMail(CMOOSMsg &msg) {return false;};
-		bool registerVars() {return false;};
+		protected:
+			RestItem();
+			std::string mytype;
+	};
 
-	protected:
-		bool isString;
-		bool isDouble;
-		std::string stringResult;
-		double doubleResult;
-};
+	class DigitalRead: public RestItem {
+		public:
+			DigitalRead(rapidjson::Document &d);
+			std::list<std::string> reportHeader();
+			std::list<std::string> reportLine();
+			bool poll();
+			bool procMail(CMOOSMsg &msg);
+			bool setMode();
+			bool subscribe(MOOSApp *myself) {return true;};
+			bool equals(RestItem* r);
+		private:
+			long pollCount = 0;
+			long lastPoll = 0;
+			int pin;
+			std::string variableName;
+	};
 
-class Function : public aRESTItem {
-	public:
-		Function(rapidjson::Document& d);
-		~Function();
-		bool fetchItem();
-		bool subscribeVariable(std::string var, ...);
-		bool readMail(CMOOSMsg &msg);
-		bool registerVars();
+	class DigitalWrite: public RestItem {
+		public:
+			DigitalWrite(rapidjson::Document d);
+			std::list<std::string> reportHeader();
+			std::list<std::string> reportLine();
+			bool poll() {return true;};
+			bool procMail(CMOOSMsg &msg);
+			bool setMode();
+			bool subscribe(MOOSApp *myself);
+			bool equals(RestItem* r);
+		private:
+			int pin;
+			std::string variableName;
+	};
 
-	protected:
-		std::vector<std::string> vars;
-		bool isString;
-		bool isDouble;
-		std::string stringResult;
-		double doubleResult;
-};
+	class AnalogRead: public RestItem {
+		public:
+			AnalogRead(rapidjson::Document d);
+			std::list<std::string> reportHeader();
+			std::list<std::string> reportLine();
+			bool poll();
+			bool procMail(CMOOSMsg &msg);
+			bool setMode();
+			bool subscribe(MOOSApp *myself) {return true;};
+			bool equals(RestItem* r);
+		private:
+			long pollCount = 0;
+			long lastPoll = 0;
+			int pin;
+			std::string variableName;
+	};
 
-class aREST : public AppCastingMOOSApp
-{
+	class AnalogWrite: public RestItem {
+		public:
+			AnalogWrite(rapidjson::Document d);
+			std::list<std::string> reportHeader();
+			std::list<std::string> reportLine();
+			bool poll() {return true;};
+			bool procMail(CMOOSMsg &msg);
+			bool setMode();
+			bool subscribe(MOOSApp *myself);
+			bool equals(RestItem* r);
+		private:
+			int pin;
+			std::string variableName;
+			int lastValue;
+			double gain = 1.0f;
+			int offset = 0;
+			int max = 255;
+			int min = 0;
+	};
+
+	class Variable: public RestItem {
+		public:
+			Variable(rapidjson::Document d);
+			std::list<std::string> reportHeader();
+			std::list<std::string> reportLine();
+			bool poll();
+			bool procMail(CMOOSMsg &msg);
+			bool setMode() {return true;};
+			bool subscribe(MOOSApp *myself) {return true;};
+			bool equals(RestItem* r);
+		private:
+			long pollCount = 0;
+			long lastPoll = 0;
+			std::string variableName;
+			std::string name;
+			std::string variableType;
+	};
+
+	class Function: public RestItem {
+		public:
+			Function(rapidjson::Document d);
+			std::list<std::string> reportHeader();
+			std::list<std::string> reportLine();
+			bool poll();
+			bool procMail(CMOOSMsg &msg);
+			bool setMode() {return true;};
+			bool subscribe(MOOSApp *myself);
+			bool equals(RestItem* r);
+		private:
+			long pollCount = 0;
+			long lastPoll = 0;
+			std::string name;
+			std::string returnName;
+			std::string returnType;
+			std::list<FunctionParameter*> arguments;
+	};
+
+	class Configuration {
+		public:
+			static Configuration* instance() {return myconf;};
+			static RestInterface* interface() {return interface;};
+			const int &getDigitalPollPeriod() {return digitalPollPeriod;};
+			const int &getAnalogPollPeriod() {return analogPollPeriod;};
+			const int &getVariablePollPeriod() {return variablePollPeriod;};
+			const int &getFunctionPollPeriod() {return functionPollPeriod;};
+			rapidjson::SchemaValidator &getInterfaceSchemaValidator() {return interfaceSchemaValidator;};
+			rapidjson::SchemaValidator &getDigitalWriteSchemaValidator() {return digitalWriteSchemaValidator;};
+			rapidjson::SchemaValidator &getDigitalReadSchemaValidator() {return digitalReadSchemaValidator;};
+			rapidjson::SchemaValidator &getAnalogWriteSchemaValidator() {return analogWriteSchemaValidator;};
+			rapidjson::SchemaValidator &getAnalogReadSchemaValidator() {return analogReadSchemaValidator;};
+			rapidjson::SchemaValidator &getVariableSchemaValidator() {return variableSchemaValidator;};
+			rapidjson::SchemaValidator &getFunctionSchemaValidator() {return functionSchemaValidator;};
+			bool populate(std::string param, std::string value);
+			void poll();
+			bool procMail(CMOOSMsg &msg);
+			bool subscribe(MOOSApp *myself);
+			bool setMode();
+			void dedupe();
+			bool valid();
+			std::string buildReport();
+
+			~Configuration();
+		private:
+			Configuration();
+			bool confFileReader(std::string filename);
+			bool jsonDispatch(rapidjson::Document d);
+
+			static Configuration* myconf;
+			RestInterface* interface = nullptr;
+			int digitalPollPeriod = 0;
+			int analogPollPeriod = 0;
+			int variablePollPeriod = 0;
+			int functionPollPeriod = 0;
+			std::list<RestItem*> pollList;
+			rapidjson::SchemaDocument interfaceSchemaDocument;
+			rapidjson::SchemaDocument digitalWriteSchemaDocument;
+			rapidjson::SchemaDocument digitalReadSchemaDocument;
+			rapidjson::SchemaDocument analogWriteSchemaDocument;
+			rapidjson::SchemaDocument analogReadSchemaDocument;
+			rapidjson::SchemaDocument variableSchemaDocument;
+			rapidjson::SchemaDocument functionSchemaDocument;
+			rapidjson::SchemaValidator interfaceSchemaValidator;
+			rapidjson::SchemaValidator digitalWriteSchemaValidator;
+			rapidjson::SchemaValidator digitalReadSchemaValidator;
+			rapidjson::SchemaValidator analogWriteSchemaValidator;
+			rapidjson::SchemaValidator analogReadSchemaValidator;
+			rapidjson::SchemaValidator variableSchemaValidator;
+			rapidjson::SchemaValidator functionSchemaValidator;
+	};
+}
+
+class aREST : public AppCastingMOOSApp {
  public:
-   aREST();
-   ~aREST();
+   aREST() {};
+   ~aREST() {};
 
- protected: // Standard MOOSApp functions to overload  
+ protected: // Standard MOOSApp functions to overload
    bool OnNewMail(MOOSMSG_LIST &NewMail);
    bool Iterate();
    bool OnConnectToServer();
    bool OnStartUp();
-   bool loadInterface(std::string value);
-   bool loadInterface(rapidjson::Document& d);
-   bool loadConfFile(std::string value);
-   bool loadItem(std::string param, std::string value);
 
- protected: // Standard AppCastingMOOSApp function to overload 
+ protected: // Standard AppCastingMOOSApp function to overload
    bool buildReport();
 
  protected:
    void registerVariables();
 
- private: // Configuration variables
- 	std::vector<aRESTItem*>		incomingItems;
- 	std::vector<aRESTItem*>		outgoingItems;
- 	bool						isSerial;
- 	std::string					serialDevice;
- 	int							serialSpeed;
- 	std::string					url;
- 	int 						digitalPoll;
- 	int 						analogPoll;
- 	int 						variablePoll;
-
- private: // State variables
- 	int 						lastDigitalPoll;
- 	int 						lastAnalogPoll;
- 	int 						lastVariablePoll;
 };
 
-#endif 
+#endif

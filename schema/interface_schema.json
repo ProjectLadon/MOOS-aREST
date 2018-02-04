@@ -1,38 +1,35 @@
 {
 	"$schema": "http://json-schema.org/schema#",
 	"id": "AREST_interface",
-	"type": "object",
-	"properties":{
-		"oneOf": [
-			{
-				"type":"object",
-				"properties": {
-					"interfaceType": "serial",
-					"interface": {
-						"type":"string",
-						"pattern": "",
-						"$comment": "pattern needs to be filled in so it only accepts device names"
-					},
-					"speed": {"type":"integer", "$comment":"defaults to 115200"},
-					"serialFormat": {
-						"type":"string", 
-						"pattern": "",
-						"$comment":"Pattern needs to be filled in so it only permits sane values",
-						"$comment":"Defaults to 8N1"
-					}
+	"oneOf": [
+		{
+			"type":"object",
+			"properties": {
+				"interfaceType": "serial",
+				"interface": {
+					"type":"string",
+					"pattern": "",
+					"$comment": "pattern needs to be filled in so it only accepts device names"
 				},
-				"required":["interfaceType", "interface"],
-				"$comment": "This is for a serial interface"
+				"speed": {"type":"integer", "$comment":"defaults to 115200"},
+				"serialFormat": {
+					"type":"string",
+					"pattern": "",
+					"$comment":"Pattern needs to be filled in so it only permits sane values",
+					"$comment":"Defaults to 8N1"
+				}
 			},
-			{
-				"type":"object",
-				"properties": {
-					"interfaceType": "network",
-					"url": {"type":"string", "format": "uri"},
-				},
-				"required":["interfaceType", "url"],
-				"$comment": "This is for a network interface"
-			}
-		]
-	}
+			"required":["interfaceType", "interface"],
+			"$comment": "This is for a serial interface"
+		},
+		{
+			"type":"object",
+			"properties": {
+				"interfaceType": "network",
+				"url": {"type":"string", "format": "uri"},
+			},
+			"required":["interfaceType", "url"],
+			"$comment": "This is for a network interface"
+		}
+	]
 }
