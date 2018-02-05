@@ -55,7 +55,7 @@ bool aREST::OnConnectToServer() {
 
 bool aREST::Iterate() {
     AppCastingMOOSApp::Iterate();
-    Configuration::instance()->poll();
+    Configuration::instance()->poll(this);
     AppCastingMOOSApp::PostReport();
     return(true);
 }
