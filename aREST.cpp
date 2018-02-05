@@ -91,7 +91,7 @@ bool aREST::OnStartUp() {
 // Procedure: registerVariables
 
 void aREST::registerVariables() {
-  Configuration::instance()->subscribe();
+  Configuration::instance()->subscribe(this);
   AppCastingMOOSApp::RegisterVariables();
   // Register("FOOBAR", 0);
 }

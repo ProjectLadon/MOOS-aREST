@@ -10,6 +10,7 @@
 #include "rapidjson/document.h"
 #include "rapidjson/schema.h"
 #include <curl/curl.h>
+#include <memory>
 
 using namespace std;
 using namespace rapidjson;
@@ -24,14 +25,14 @@ unique_ptr<FunctionParameter> FunctionParameter::functionParameterFactory (rapid
     return unique_ptr<FunctionParameter>(nullptr);
 }
 
-bool FunctionParameter::subscribe(MOOSApp *myself) {
+bool FunctionParameter::subscribe(CMOOSApp *myself) {
     return myself->Register(getVariableName());
 }
 
 FunctionParameterDouble::FunctionParameterDouble(rapidjson::Document &d) {
     if (d.IsObject() && d.HasMember("name") && d.HasMember("inputVariable")) {
-        name = d["name"].GetString();
-        inputVariable = d["inputVariable"].GetString();
+        this->name = d["name"].GetString();
+        this->variableName = d["inputVariable"].GetString();
     } else {
         throw std::invalid_argument("Invalid function parameter JSON");
     }
@@ -39,7 +40,7 @@ FunctionParameterDouble::FunctionParameterDouble(rapidjson::Document &d) {
 
 bool FunctionParameterDouble::procMail(CMOOSMsg &msg) {
     if ((msg.GetKey() == variableName) && (msg.IsDouble())) {
-        encodedValue = urlencode(msg.GetDouble());
+        urlencode(msg.GetDouble());
         return true;
     } else {
         return false;
@@ -48,8 +49,8 @@ bool FunctionParameterDouble::procMail(CMOOSMsg &msg) {
 
 FunctionParameterString::FunctionParameterString(rapidjson::Document &d) {
     if (d.IsObject() && d.HasMember("name") && d.HasMember("inputVariable")) {
-        name = d["name"].GetString();
-        inputVariable = d["inputVariable"].GetString();
+        this->name = d["name"].GetString();
+        this->variableName = d["inputVariable"].GetString();
     } else {
         throw std::invalid_argument("Invalid function parameter JSON");
     }
@@ -57,13 +58,14 @@ FunctionParameterString::FunctionParameterString(rapidjson::Document &d) {
 
 bool FunctionParameterString::procMail(CMOOSMsg &msg) {
     if ((msg.GetKey() == variableName) && (msg.IsDouble())) {
-        encodedValue = urlencode(msg.GetString());
+        urlencode(msg.GetString());
         return true;
     } else {
         return false;
     }
 }
 
+/// @brief Generate a RestItem object of the type specified by the given JSON
 unique_ptr<RestItem> RestItem::restItemFactory(rapidjson::Document &d) {
     if (d.Accept(Configuration::instance()->getDigitalReadSchemaValidator())) {
         return unique_ptr<RestItem>(new DigitalRead(d));
@@ -83,17 +85,17 @@ unique_ptr<RestItem> RestItem::restItemFactory(rapidjson::Document &d) {
     if (d.Accept(Configuration::instance()->getFunctionSchemaValidator())) {
         return unique_ptr<RestItem>(new Function(d));
     }
-    return unique_ptr<RestItem>(nullptr);
+    return unique_ptr<RestItem>();
 }
 
 DigitalRead::DigitalRead(rapidjson::Document &d) {
     mytype = "DigitalRead";
-    pin = d["pin"].GetInteger();
+    pin = d["pin"].GetInt();
     variableName = d["variable"].GetString();
 }
 
 bool DigitalRead::poll() {
-    if ((pollCount - lastPollCount) < Configuration::instance()->getDigitalPollPeriod()) {
+    if ((pollCount - lastPoll) < Configuration::instance()->getDigitalPollPeriod()) {
         return true;
     }
     RestInterace *iface = Configuration::interface();

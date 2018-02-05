@@ -29,8 +29,8 @@ unique_ptr<RestInterface> RestInterface::restInterfaceFactory (rapidjson::Docume
     std::string ifacetype(d["interfaceType"].GetString(), d["interfaceType"].GetStringLength());
 
     if (ifacetype == "network") {
-        auto n = new RestNetwork(d, ifacetype);
-        return unique_ptr<RestInterface>(n);
+        //auto n = new RestNetwork(d, ifacetype);
+        return unique_ptr<RestInterface>(new RestNetwork(d, ifacetype));
     }
     return unique_ptr<RestInterface>(nullptr);
 }
