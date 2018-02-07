@@ -16,11 +16,6 @@ using namespace std;
 using namespace rapidjson;
 using namespace RestItem;
 
-/// @brief RestInterface base class constructor
-RestInterface::RestInterface (std::string t) {
-    interfaceType = t;
-}
-
 /// @brief Generate a RestInterface object of the type specified by the given JSON.
 unique_ptr<RestInterface> RestInterface::restInterfaceFactory (rapidjson::Document &d) {
     if (!d.Accept(Configuration::instance()->getInterfaceSchemaValidator())) {
@@ -36,7 +31,8 @@ unique_ptr<RestInterface> RestInterface::restInterfaceFactory (rapidjson::Docume
 }
 
 /// @brief Create RestNetwork object from the given configuration JSON
-RestNetwork::RestNetwork (rapidjson::Document &d, std::string type) : RestInterface(type) {
+RestNetwork::RestNetwork (rapidjson::Document &d, std::string type) {
+    interfaceType = type;
     if (d.HasMember("url")) {
         url = d["url"].GetString();
     } else {

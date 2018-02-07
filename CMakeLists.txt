@@ -42,6 +42,7 @@ SET(SRC
   aREST.cpp
   restInterface.cpp
   restItem.cpp
+  configuration.cpp
   aREST_Info.cpp
   main.cpp
   "${JSON_HEADER_FILES}"

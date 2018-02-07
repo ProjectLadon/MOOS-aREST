@@ -8,7 +8,7 @@
 		"variableType":{"type":"string","enum":["STRING","DOUBLE"]},
 		"variable":{
 			"type":"string",
-			"$comment": "This must be a free variable name; it will be published as a DOUBLE"
+			"$comment": "This must be a free variable name; it will be published as the incoming type"
 		}
 	},
 	"required":["function","name","variable","variableType"]

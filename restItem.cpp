@@ -1,6 +1,6 @@
 /************************************************************/
 /*    NAME:                                               */
-/*    ORGN: MIT                                             */
+/*    ORGN: Project Ladon                                       */
 /*    FILE: restItem.cpp                                        */
 /*    DATE:                                                 */
 /************************************************************/
@@ -16,7 +16,7 @@ using namespace std;
 using namespace rapidjson;
 using namespace RestItem;
 
-unique_ptr<FunctionParameter> FunctionParameter::functionParameterFactory (rapidjson::Document &d) {
+unique_ptr<FunctionParameter> FunctionParameter::functionParameterFactory (rapidjson::Value &d) {
     if (d.IsObject() && d.HasMember("name") && d.HasMember("inputVariable") && d.HasMember("inputVariableType")) {
         string mytype(d["interfaceType"].GetString(), d["interfaceType"].GetStringLength());
         if (mytype == "DOUBLE") return unique_ptr<FunctionParameter>(new FunctionParameterDouble(d));
@@ -29,13 +29,22 @@ bool FunctionParameter::subscribe(aREST *myself) {
     return myself->registerVar(getVariableName());
 }
 
-FunctionParameterDouble::FunctionParameterDouble(rapidjson::Document &d) {
+FunctionParameterDouble::FunctionParameterDouble(rapidjson::Value &d) {
     if (d.IsObject() && d.HasMember("name") && d.HasMember("inputVariable")) {
         this->name = d["name"].GetString();
         this->variableName = d["inputVariable"].GetString();
     } else {
         throw std::invalid_argument("Invalid function parameter JSON");
     }
+}
+
+void FunctionParameterDouble::urlencode(double val) {
+    CURL *hnd = curl_easy_init();
+    string encval = to_string(val);
+    char *encoded = curl_easy_escape(hnd, encval.c_str(), 0);
+    encodedValue = encoded;
+    curl_free(encoded);
+    curl_easy_cleanup(hnd);
 }
 
 bool FunctionParameterDouble::procMail(CMOOSMsg &msg) {
@@ -47,13 +56,21 @@ bool FunctionParameterDouble::procMail(CMOOSMsg &msg) {
     }
 }
 
-FunctionParameterString::FunctionParameterString(rapidjson::Document &d) {
+FunctionParameterString::FunctionParameterString(rapidjson::Value &d) {
     if (d.IsObject() && d.HasMember("name") && d.HasMember("inputVariable")) {
         this->name = d["name"].GetString();
         this->variableName = d["inputVariable"].GetString();
     } else {
         throw std::invalid_argument("Invalid function parameter JSON");
     }
+}
+
+void FunctionParameterString::urlencode(std::string val) {
+    CURL *hnd = curl_easy_init();
+    char *encoded = curl_easy_escape(hnd, val.c_str(), 0);
+    encodedValue = encoded;
+    curl_free(encoded);
+    curl_easy_cleanup(hnd);
 }
 
 bool FunctionParameterString::procMail(CMOOSMsg &msg) {
@@ -87,6 +104,8 @@ unique_ptr<RestItemBase> RestItemBase::restItemFactory(rapidjson::Document &d) {
     }
     return unique_ptr<RestItemBase>();
 }
+
+//RestItemBase::~RestItemBase() {}
 
 DigitalRead::DigitalRead(rapidjson::Document &d) {
     mytype = "DigitalRead";
@@ -176,6 +195,10 @@ bool DigitalWrite::setMode() {
     RestInterface *iface = Configuration::interface();
     iface->makeRequest(request);
     return true;
+}
+
+bool DigitalWrite::subscribe(aREST *myself) {
+    return myself->registerVar(variableName);
 }
 
 bool DigitalWrite::equals(RestItemBase *r) {
@@ -278,6 +301,10 @@ bool AnalogWrite::procMail(CMOOSMsg &msg) {
     return false;
 }
 
+bool AnalogWrite::subscribe(aREST *myself) {
+    return myself->registerVar(variableName);
+}
+
 bool AnalogWrite::equals(RestItemBase *r) {
     if (r->myType() == mytype) {
         AnalogWrite* s = reinterpret_cast<AnalogWrite*>(r);
@@ -300,5 +327,157 @@ list<string> AnalogWrite::reportHeader () {
 list<string> AnalogWrite::reportLine () {
     list<string> ret;
     ret.push_back(to_string(lastValue));
+    return ret;
+}
+
+Variable::Variable(rapidjson::Document &d) {
+    mytype = "Variable";
+    variableType = d["variableType"].GetString();
+    name = d["name"].GetString();
+    variableName = d["variable"].GetString();
+}
+
+bool Variable::poll(aREST *myself) {
+    pollCount++;
+    if ((pollCount - lastPoll) < Configuration::instance()->getAnalogPollPeriod()) {
+        return true;
+    }
+    RestInterface *iface = Configuration::interface();
+    string request = "/" + name;
+    unique_ptr<Document> d = iface->makeRequest(request);
+    if (d && d->IsObject() && d->HasMember(name.c_str())) {
+        Value* ret = Pointer(request.c_str()).Get(*d);
+        if ((variableType == "STRING") && ret->IsString()) {
+            stringVal = ret->GetString();
+            myself->notifyString(variableName, stringVal);
+        } else if ((variableType == "DOUBLE") && ret->IsNumber()) {
+            doubleVal = ret->GetFloat();
+            myself->notifyDouble(variableName, doubleVal);
+        } else return false;
+        lastPoll = pollCount;
+        return true;
+    }
+    return false;
+}
+
+bool Variable::equals(RestItemBase *r) {
+    if (r->myType() == mytype) {
+        Variable* s = reinterpret_cast<Variable*>(r);
+        return ((s->getName() == name) && (s->getVariableName() == variableName) &&
+                (s->getVariableType() == variableType));
+    } else {
+        return false;
+    }
+}
+
+/// @brief Generate header item for the AppCast
+list<string> Variable::reportHeader () {
+    list<string> ret;
+    ret.push_back(name);
+    return ret;
+}
+
+/// @brief Generate data item for the AppCast
+list<string> Variable::reportLine () {
+    list<string> ret;
+    if (variableType == "STRING") {
+        ret.push_back(stringVal);
+    } else if (variableType == "DOUBLE") {
+        ret.push_back(to_string(doubleVal));
+    }
+    return ret;
+}
+
+Function::Function(rapidjson::Document &d) {
+    mytype = "Function";
+    name = d["name"].GetString();
+    if (d.HasMember("returnName") && d.HasMember("returnType")) {
+        returnName = d["returnName"].GetString();
+        returnType = d["returnType"].GetString();
+    }
+    if (d.HasMember("parameters")) {
+        for (auto& v : d["parameters"].GetArray()) {
+            arguments.push_back(FunctionParameter::functionParameterFactory(v));
+        }
+    }
+}
+
+bool Function::poll(aREST *myself) {
+    pollCount++;
+    if ((pollCount - lastPoll) < Configuration::instance()->getAnalogPollPeriod()) {
+        return true;
+    }
+    RestInterface *iface = Configuration::interface();
+    string request = "/" + name;
+    if (arguments.size() > 0) {
+        request += "?params=";
+        for (auto &p : arguments) {
+            request += p->geturlencoded() + "&";
+        }
+    }
+    unique_ptr<Document> d = iface->makeRequest(request);
+    if (d && d->IsObject() && d->HasMember("return_value")) {
+        Value* ret = Pointer("/return_value").Get(*d);
+        if ((returnType == "STRING") && ret->IsString()) {
+            stringVal = ret->GetString();
+            myself->notifyString(returnName, stringVal);
+        } else if ((returnType == "DOUBLE") && ret->IsNumber()) {
+            doubleVal = ret->GetFloat();
+            myself->notifyDouble(returnName, doubleVal);
+        } else return false;
+        lastPoll = pollCount;
+        return true;
+    }
+    return false;
+}
+
+bool Function::procMail(CMOOSMsg &msg) {
+    bool ret = false;
+    for (auto &p : arguments) {
+        ret |= p->procMail(msg);
+    }
+    if (ret) lastPoll = 0;   // forces the next poll() call to transmit
+    return ret;
+}
+
+bool Function::subscribe(aREST *myself) {
+    bool ret = true;
+    for (auto &p : arguments) {
+        ret &= p->subscribe(myself);
+    }
+    return ret;
+}
+
+bool Function::equals(RestItemBase *r) {
+    if (r->myType() == mytype) {
+        Function* s = reinterpret_cast<Function*>(r);
+        bool ret = ((s->getName() == name) &&
+                    (s->getReturnName() == returnName) &&
+                    (s->getReturnType() == returnType));
+        if (ret && (arguments.size() == s->getArgs().size())) {
+            for (int i = 0; i < arguments.size(); i++) {
+                ret &= (arguments[i]->equals(s->getArgs()[i].get()));
+            }
+        }
+        return ret;
+    }
+    return false;
+}
+
+/// @brief Generate header item for the AppCast
+list<string> Function::reportHeader () {
+    list<string> ret;
+    ret.push_back(name);
+    return ret;
+}
+
+/// @brief Generate data item for the AppCast
+list<string> Function::reportLine () {
+    list<string> ret;
+    if (returnType == "STRING") {
+        ret.push_back(stringVal);
+    } else if (returnType == "DOUBLE") {
+        ret.push_back(to_string(doubleVal));
+    }
     return ret;
 }
