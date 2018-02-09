@@ -6,12 +6,18 @@
 /************************************************************/
 
 #include "aREST.h"
+#include "ACTable.h"
 #include "rapidjson/rapidjson.h"
+#include "rapidjson/stringbuffer.h"
 #include "rapidjson/document.h"
 #include "rapidjson/schema.h"
+#include "rapidjson/writer.h"
 #include "rapidjson/error/en.h"
 #include <curl/curl.h>
 #include <memory>
+#include <fstream>
+#include <iostream>
+#include <streambuf>
 
 // Include the schemas
 #include "schema/analogread_schema.h"
@@ -69,20 +75,23 @@ Configuration::Configuration () {
 bool Configuration::populate(std::string param, std::string value) {
     Document d;
     if (d.Parse(value.c_str()).HasParseError()) {
-        if ("digitalPollPeriod" == param) {
+        if ("DIGITALPOLLPERIOD" == param) {
             digitalPollPeriod = atof(value.c_str());
             if (digitalPollPeriod < 0) digitalPollPeriod = 0;
-        } else if ("analogPollPeriod" == param) {
+        } else if ("ANALOGPOLLPERIOD" == param) {
             analogPollPeriod = atof(value.c_str());
             if (analogPollPeriod < 0) analogPollPeriod = 0;
-        } else if ("functionPollPeriod" == param) {
+        } else if ("FUNCTIONPOLLPERIOD" == param) {
             functionPollPeriod = atof(value.c_str());
             if (functionPollPeriod < 0) functionPollPeriod = 0;
-        } else if ("variablePollPeriod" == param) {
+        } else if ("VARIABLEPOLLPERIOD" == param) {
             variablePollPeriod = atof(value.c_str());
             if (variablePollPeriod < 0) variablePollPeriod = 0;
+        } else if ("CONFFILE" == param) {
+            return confFileReader(value);
         } else {
-            fprintf(stderr, "\nError(offset %u): %s\n", (unsigned)d.GetErrorOffset(), GetParseError_En(d.GetParseError()));
+            cerr << "JSON parse error " << GetParseError_En(d.GetParseError());
+            cerr << " in " << param << " at offset " << d.GetErrorOffset() << endl;
             return false;
         }
     } else {
@@ -122,15 +131,70 @@ bool Configuration::setMode() {
 }
 
 void Configuration::dedupe () {
-
+    // search for duplicates; if one is found, the first occurence is set to nullptr
+    for (auto a = pollList.begin(); a != pollList.end(); a++) {
+        for (auto b = a; b != pollList.end(); b++) {
+            if (a->get()->equals(b->get())) {
+                a->reset(nullptr);
+                break;
+            }
+        }
+    }
+    // erase-remove idiom to get rid of the nulls
+    pollList.erase(remove(pollList.begin(), pollList.end(), nullptr), pollList.end());
 }
 
 bool Configuration::confFileReader(std::string filename) {
-
-    return false;
+    ifstream confFile;
+    confFile.open(filename);
+    // Make sure the file opened correctly
+    if (!confFile.is_open()) {
+        cerr << "Failed to open configuration file " << filename << endl;
+        return false;
+    }
+    // Vacuum up the conf file
+    string json;
+    confFile.seekg(0, ios::end);
+    json.reserve(confFile.tellg());
+    confFile.seekg(0, ios::beg);
+    json.assign((istreambuf_iterator<char>(confFile)), istreambuf_iterator<char>());
+    rapidjson::Document d;
+    // Parse and check for errors
+    if (d.Parse(json.c_str()).HasParseError()) {
+        cerr << "JSON parse error " << GetParseError_En(d.GetParseError());
+        cerr << " in " << filename << " at offset " << d.GetErrorOffset() << endl;
+        return false;
+    }
+    // Make sure it's an array
+    if (!d.IsArray()) {
+        cerr << "JSON read from " << filename << " is not an array." << endl;
+        return false;
+    }
+    // Dispatch the JSON to build the configuration
+    bool result = true;
+    for (auto &v : d.GetArray()) {
+        result &= jsonDispatch(v);
+    }
+    return result;
 }
 
-bool Configuration::jsonDispatch(rapidjson::Document &d) {
+bool Configuration::jsonDispatch(rapidjson::Value &d) {
+    if (d.Accept(*interfaceSchemaValidator)) {
+        iface = RestInterface::restInterfaceFactory(d).release();
+        if (iface) return true;
+    } else {
+        auto tmp = RestItemBase::restItemFactory(d);
+        if (tmp) {
+            pollList.push_back(move(tmp));
+            return true;
+        } else {
+            StringBuffer buf;
+            Writer<StringBuffer> writer(buf);
+            d.Accept(writer);
+            cerr << "Failed to dispatch JSON :" << endl;
+            cerr << "\t" << buf.GetString() << endl;
+        }
+    }
     return false;
 }
 
@@ -140,7 +204,21 @@ bool Configuration::valid () {
 }
 
 string Configuration::buildReport () {
-    return "";
+    list<string> headers;
+    list<string> values;
+    // Assemble the headers & values as a unified list
+    for (auto &a: pollList) {
+        list<string> tmph = a->reportHeader();
+        for (auto &h: tmph) headers.push_back(h);
+        list<string> tmpv = a->reportLine();
+        for (auto &v: tmpv) values.push_back(v);
+    }
+    // Assemble the response
+    ACTable actab(headers.size());
+    for (auto &h: headers) actab << h;
+    actab.addHeaderLines();
+    for (auto &v: values) actab << v;
+    return actab.getFormattedString();
 }
 
 Configuration Configuration::myconf;

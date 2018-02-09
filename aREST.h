@@ -44,7 +44,7 @@ class aREST : public AppCastingMOOSApp {
 class RestInterface {
 	public:
 		RestInterface() {};
-		static std::unique_ptr<RestInterface> restInterfaceFactory(rapidjson::Document &d);
+		static std::unique_ptr<RestInterface> restInterfaceFactory(rapidjson::Value &d);
 		virtual std::unique_ptr<rapidjson::Document> makeRequest(std::string request) = 0;
 		std::string getInterfaceType() {return interfaceType;};
 
@@ -54,7 +54,7 @@ class RestInterface {
 
 class RestNetwork : public RestInterface {
 	public:
-		RestNetwork(rapidjson::Document &d, std::string type);
+		RestNetwork(rapidjson::Value &d, std::string type);
 		std::unique_ptr<rapidjson::Document> makeRequest(std::string request);
 
 	private:
@@ -101,7 +101,7 @@ namespace RestItem {
 	class RestItemBase {
 		public:
 			RestItemBase() {};
-			static std::unique_ptr<RestItemBase> restItemFactory(rapidjson::Document &d);
+			static std::unique_ptr<RestItemBase> restItemFactory(rapidjson::Value &d);
 			const std::string &myType() {return mytype;};
 			virtual std::list<std::string> reportHeader() = 0;
 			virtual std::list<std::string> reportLine() = 0;
@@ -118,7 +118,7 @@ namespace RestItem {
 
 	class DigitalRead: public RestItemBase {
 		public:
-			DigitalRead(rapidjson::Document &d);
+			DigitalRead(rapidjson::Value &d);
 			std::list<std::string> reportHeader();
 			std::list<std::string> reportLine();
 			bool poll(aREST *myself);
@@ -140,7 +140,7 @@ namespace RestItem {
 
 	class DigitalWrite: public RestItemBase {
 		public:
-			DigitalWrite(rapidjson::Document &d);
+			DigitalWrite(rapidjson::Value &d);
 			std::list<std::string> reportHeader();
 			std::list<std::string> reportLine();
 			bool poll(aREST *myself) {return true;};
@@ -158,7 +158,7 @@ namespace RestItem {
 
 	class AnalogRead: public RestItemBase {
 		public:
-			AnalogRead(rapidjson::Document &d);
+			AnalogRead(rapidjson::Value &d);
 			std::list<std::string> reportHeader();
 			std::list<std::string> reportLine();
 			bool poll(aREST *myself);
@@ -184,7 +184,7 @@ namespace RestItem {
 
 	class AnalogWrite: public RestItemBase {
 		public:
-			AnalogWrite(rapidjson::Document &d);
+			AnalogWrite(rapidjson::Value &d);
 			std::list<std::string> reportHeader();
 			std::list<std::string> reportLine();
 			bool poll(aREST *myself) {return true;};
@@ -210,7 +210,7 @@ namespace RestItem {
 
 	class Variable: public RestItemBase {
 		public:
-			Variable(rapidjson::Document &d);
+			Variable(rapidjson::Value &d);
 			std::list<std::string> reportHeader();
 			std::list<std::string> reportLine();
 			bool poll(aREST *myself);
@@ -233,7 +233,7 @@ namespace RestItem {
 
 	class Function: public RestItemBase {
 		public:
-			Function(rapidjson::Document &d);
+			Function(rapidjson::Value &d);
 			std::list<std::string> reportHeader();
 			std::list<std::string> reportLine();
 			bool poll(aREST *myself);
@@ -284,7 +284,7 @@ namespace RestItem {
 		private:
 			Configuration();
 			bool confFileReader(std::string filename);
-			bool jsonDispatch(rapidjson::Document &d);
+			bool jsonDispatch(rapidjson::Value &d);
 
 			static Configuration myconf;
 			static RestInterface* iface;

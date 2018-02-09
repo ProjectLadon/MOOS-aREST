@@ -83,7 +83,7 @@ bool FunctionParameterString::procMail(CMOOSMsg &msg) {
 }
 
 /// @brief Generate a RestItem object of the type specified by the given JSON
-unique_ptr<RestItemBase> RestItemBase::restItemFactory(rapidjson::Document &d) {
+unique_ptr<RestItemBase> RestItemBase::restItemFactory(rapidjson::Value &d) {
     if (d.Accept(Configuration::instance()->getDigitalReadSchemaValidator())) {
         return unique_ptr<RestItemBase>(new DigitalRead(d));
     }
@@ -107,7 +107,7 @@ unique_ptr<RestItemBase> RestItemBase::restItemFactory(rapidjson::Document &d) {
 
 //RestItemBase::~RestItemBase() {}
 
-DigitalRead::DigitalRead(rapidjson::Document &d) {
+DigitalRead::DigitalRead(rapidjson::Value &d) {
     mytype = "DigitalRead";
     pin = d["pin"].GetInt();
     variableName = d["variable"].GetString();
@@ -169,7 +169,7 @@ list<string> DigitalRead::reportLine () {
     return ret;
 }
 
-DigitalWrite::DigitalWrite(rapidjson::Document &d) {
+DigitalWrite::DigitalWrite(rapidjson::Value &d) {
     mytype = "DigitalWrite";
     pin = d["pin"].GetInt();
     variableName = d["variable"].GetString();
@@ -225,7 +225,7 @@ list<string> DigitalWrite::reportLine () {
     return ret;
 }
 
-AnalogRead::AnalogRead(rapidjson::Document &d) {
+AnalogRead::AnalogRead(rapidjson::Value &d) {
     mytype = "AnalogRead";
     pin = d["pin"].GetInt();
     variableName = d["variable"].GetString();
@@ -278,7 +278,7 @@ list<string> AnalogRead::reportLine () {
     return ret;
 }
 
-AnalogWrite::AnalogWrite(rapidjson::Document &d) {
+AnalogWrite::AnalogWrite(rapidjson::Value &d) {
     mytype = "AnalogWrite";
     pin = d["pin"].GetInt();
     variableName = d["variable"].GetString();
@@ -330,7 +330,7 @@ list<string> AnalogWrite::reportLine () {
     return ret;
 }
 
-Variable::Variable(rapidjson::Document &d) {
+Variable::Variable(rapidjson::Value &d) {
     mytype = "Variable";
     variableType = d["variableType"].GetString();
     name = d["name"].GetString();
@@ -388,7 +388,7 @@ list<string> Variable::reportLine () {
     return ret;
 }
 
-Function::Function(rapidjson::Document &d) {
+Function::Function(rapidjson::Value &d) {
     mytype = "Function";
     name = d["name"].GetString();
     if (d.HasMember("returnName") && d.HasMember("returnType")) {
