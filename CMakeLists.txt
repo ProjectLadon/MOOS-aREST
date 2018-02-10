@@ -10,7 +10,7 @@ SET(XXD
 
 # List of schema files
 set(JSON_SCHEMA_FILES
-	${CMAKE_CURRENT_SOURCE_DIR}/schema/analogread_schema.json
+  ${CMAKE_CURRENT_SOURCE_DIR}/schema/analogread_schema.json
   ${CMAKE_CURRENT_SOURCE_DIR}/schema/digitalread_schema.json
   ${CMAKE_CURRENT_SOURCE_DIR}/schema/function_schema.json
   ${CMAKE_CURRENT_SOURCE_DIR}/schema/variable_schema.json
