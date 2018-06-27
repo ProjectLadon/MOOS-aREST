@@ -18,7 +18,7 @@ using namespace RestItem;
 
 unique_ptr<FunctionParameter> FunctionParameter::functionParameterFactory (rapidjson::Value &d) {
     if (d.IsObject() && d.HasMember("name") && d.HasMember("inputVariable") && d.HasMember("inputVariableType")) {
-        string mytype(d["interfaceType"].GetString(), d["interfaceType"].GetStringLength());
+        string mytype(d["inputVariableType"].GetString(), d["inputVariableType"].GetStringLength());
         if (mytype == "DOUBLE") return unique_ptr<FunctionParameter>(new FunctionParameterDouble(d));
         if (mytype == "STRING") return unique_ptr<FunctionParameter>(new FunctionParameterString(d));
     }
@@ -86,20 +86,15 @@ bool FunctionParameterString::procMail(CMOOSMsg &msg) {
 unique_ptr<RestItemBase> RestItemBase::restItemFactory(rapidjson::Value &d) {
     if (d.Accept(Configuration::instance()->getDigitalReadSchemaValidator())) {
         return unique_ptr<RestItemBase>(new DigitalRead(d));
-    }
-    if (d.Accept(Configuration::instance()->getDigitalWriteSchemaValidator())) {
+    } else if (d.Accept(Configuration::instance()->getDigitalWriteSchemaValidator())) {
         return unique_ptr<RestItemBase>(new DigitalWrite(d));
-    }
-    if (d.Accept(Configuration::instance()->getAnalogReadSchemaValidator())) {
+    } else if (d.Accept(Configuration::instance()->getAnalogReadSchemaValidator())) {
         return unique_ptr<RestItemBase>(new AnalogRead(d));
-    }
-    if (d.Accept(Configuration::instance()->getAnalogWriteSchemaValidator())) {
+    } else if (d.Accept(Configuration::instance()->getAnalogWriteSchemaValidator())) {
         return unique_ptr<RestItemBase>(new AnalogWrite(d));
-    }
-    if (d.Accept(Configuration::instance()->getVariableSchemaValidator())) {
+    } else if (d.Accept(Configuration::instance()->getVariableSchemaValidator())) {
         return unique_ptr<RestItemBase>(new Variable(d));
-    }
-    if (d.Accept(Configuration::instance()->getFunctionSchemaValidator())) {
+    } else if (d.Accept(Configuration::instance()->getFunctionSchemaValidator())) {
         return unique_ptr<RestItemBase>(new Function(d));
     }
     return unique_ptr<RestItemBase>();

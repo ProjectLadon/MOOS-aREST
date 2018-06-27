@@ -3,7 +3,7 @@
 	"id": "AREST_function",
 	"type": "object",
 	"properties":{
-		"function":"function",
+		"function":{"type":"string", "enum":["function"]},
 		"name":{"type":"string"},
 		"parameters":{
 			"type":"array",

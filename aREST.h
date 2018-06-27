@@ -258,7 +258,7 @@ namespace RestItem {
 
 	class Configuration {
 		public:
-			static Configuration* instance() {return &myconf;};
+			static Configuration* instance() {if (!myconf) myconf = new Configuration(); return myconf;};
 			static RestInterface* interface() {return iface;};
 			const int &getDigitalPollPeriod() {return digitalPollPeriod;};
 			const int &getAnalogPollPeriod() {return analogPollPeriod;};
@@ -286,7 +286,7 @@ namespace RestItem {
 			bool confFileReader(std::string filename);
 			bool jsonDispatch(rapidjson::Value &d);
 
-			static Configuration myconf;
+			static Configuration* myconf;
 			static RestInterface* iface;
 			int digitalPollPeriod = 0;
 			int analogPollPeriod = 0;

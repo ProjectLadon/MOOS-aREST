@@ -62,11 +62,13 @@ bool aREST::OnStartUp() {
     m_MissionReader.EnableVerbatimQuoting(false);
     if(!m_MissionReader.GetConfiguration(GetAppName(), sParams))
     reportConfigWarning("No config block found for " + GetAppName());
+    auto conf = Configuration::instance();
 
     STRING_LIST::iterator p;
     for(p=sParams.begin(); p!=sParams.end(); p++) {
         string line  = *p;
-        string param = toupper(biteStringX(line, '='));
+        string param = biteStringX(line, '=');
+        MOOSToUpper(param);
         string value = line;
 
         if(!(Configuration::instance()->populate(param, value))) {

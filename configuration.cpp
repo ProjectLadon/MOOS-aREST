@@ -35,6 +35,7 @@ using namespace RestItem;
 Configuration::Configuration () {
     // set a static...
     iface = nullptr;
+    cerr << "Creating schemas..." << endl;
 
     // read in the strings for the schemas
     Document interfaceSchema;
@@ -74,27 +75,37 @@ Configuration::Configuration () {
 
 bool Configuration::populate(std::string param, std::string value) {
     Document d;
+    cerr << "Processing parameter " << param << endl;
+    if ("DIGITALPOLLPERIOD" == param) {
+		digitalPollPeriod = atof(value.c_str());
+		if (digitalPollPeriod < 0) digitalPollPeriod = 0;
+		return true;
+	} else if ("ANALOGPOLLPERIOD" == param) {
+		analogPollPeriod = atof(value.c_str());
+		if (analogPollPeriod < 0) analogPollPeriod = 0;
+		return true;
+	} else if ("FUNCTIONPOLLPERIOD" == param) {
+		functionPollPeriod = atof(value.c_str());
+		if (functionPollPeriod < 0) functionPollPeriod = 0;
+		return true;
+	} else if ("VARIABLEPOLLPERIOD" == param) {
+		variablePollPeriod = atof(value.c_str());
+		if (variablePollPeriod < 0) variablePollPeriod = 0;
+		return true;
+	} else if ("CONFFILE" == param) {
+		return confFileReader(value);
+	} else if ("COMMSTICK" == param) {
+		return false;
+	} else if ("APPTICK" == param) {
+		return false;
+	}
     if (d.Parse(value.c_str()).HasParseError()) {
-        if ("DIGITALPOLLPERIOD" == param) {
-            digitalPollPeriod = atof(value.c_str());
-            if (digitalPollPeriod < 0) digitalPollPeriod = 0;
-        } else if ("ANALOGPOLLPERIOD" == param) {
-            analogPollPeriod = atof(value.c_str());
-            if (analogPollPeriod < 0) analogPollPeriod = 0;
-        } else if ("FUNCTIONPOLLPERIOD" == param) {
-            functionPollPeriod = atof(value.c_str());
-            if (functionPollPeriod < 0) functionPollPeriod = 0;
-        } else if ("VARIABLEPOLLPERIOD" == param) {
-            variablePollPeriod = atof(value.c_str());
-            if (variablePollPeriod < 0) variablePollPeriod = 0;
-        } else if ("CONFFILE" == param) {
-            return confFileReader(value);
-        } else {
-            cerr << "JSON parse error " << GetParseError_En(d.GetParseError());
-            cerr << " in " << param << " at offset " << d.GetErrorOffset() << endl;
-            return false;
-        }
+		cerr << "JSON parse error " << GetParseError_En(d.GetParseError());
+		cerr << " in " << param << " at offset " << d.GetErrorOffset() << endl;
+		cerr << value << endl;
+		return false;
     } else {
+		cerr << "Dispatching JSON object " << value << endl;
         return jsonDispatch(d);
     }
     return false;
@@ -179,10 +190,14 @@ bool Configuration::confFileReader(std::string filename) {
 }
 
 bool Configuration::jsonDispatch(rapidjson::Value &d) {
-    if (d.Accept(*interfaceSchemaValidator)) {
+	cerr << "Dispatching JSON" << endl;
+    if (d.Accept(Configuration::instance()->getInterfaceSchemaValidator()) &&
+		d.HasMember("interfaceType") && d["interfaceType"].IsString()) {
+		cerr << "Dispatching REST interface object" << endl;
         iface = RestInterface::restInterfaceFactory(d).release();
         if (iface) return true;
     } else {
+		cerr << "Dispatching REST item object" << endl;
         auto tmp = RestItemBase::restItemFactory(d);
         if (tmp) {
             pollList.push_back(move(tmp));
@@ -221,5 +236,5 @@ string Configuration::buildReport () {
     return actab.getFormattedString();
 }
 
-Configuration Configuration::myconf;
+Configuration* Configuration::myconf = nullptr;
 RestInterface* Configuration::iface = nullptr;

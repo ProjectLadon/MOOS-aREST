@@ -48,6 +48,7 @@ unique_ptr<rapidjson::Document> RestNetwork::makeRequest(std::string request) {
     char errbuf[CURL_ERROR_SIZE];
 
     request = url + request;
+    std::cerr << "Request is: >>" << request << std::endl;
 
     hnd = curl_easy_init();
     curl_easy_setopt(hnd, CURLOPT_URL, request.c_str());
