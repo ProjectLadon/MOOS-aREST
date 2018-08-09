@@ -3,7 +3,7 @@
 	"id": "AREST_analogWrite",
 	"type": "object",
 	"properties":{
-		"function":"analogWrite",
+		"function":{"type": "string", "enum":["analogWrite"]},
 		"pin":{"type":"number"},
 		"variable":{
 			"type":"string",

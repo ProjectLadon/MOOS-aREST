@@ -11,6 +11,7 @@
 #include "rapidjson/schema.h"
 #include <curl/curl.h>
 #include <functional>
+#include <iostream>
 
 using namespace std;
 using namespace rapidjson;
@@ -21,9 +22,14 @@ unique_ptr<RestInterface> RestInterface::restInterfaceFactory (rapidjson::Value 
     if (!d.Accept(Configuration::instance()->getInterfaceSchemaValidator())) {
         throw std::invalid_argument("Invalid interface JSON");
     }
+    cerr << "Creating new interface" << endl;
+    if (!(d.IsObject() && d.HasMember("interfaceType") && d["interfaceType"].IsString())) {
+        throw std::invalid_argument("Invalid interface JSON");
+    }
     std::string ifacetype(d["interfaceType"].GetString(), d["interfaceType"].GetStringLength());
 
     if (ifacetype == "network") {
+        cerr << "Interface type is network" << endl;
         //auto n = new RestNetwork(d, ifacetype);
         return unique_ptr<RestInterface>(new RestNetwork(d, ifacetype));
     }
@@ -33,6 +39,7 @@ unique_ptr<RestInterface> RestInterface::restInterfaceFactory (rapidjson::Value 
 /// @brief Create RestNetwork object from the given configuration JSON
 RestNetwork::RestNetwork (rapidjson::Value &d, std::string type) {
     interfaceType = type;
+    cerr << "Creating new network interface" << endl;
     if (d.HasMember("url")) {
         url = d["url"].GetString();
     } else {
@@ -48,6 +55,7 @@ unique_ptr<rapidjson::Document> RestNetwork::makeRequest(std::string request) {
     char errbuf[CURL_ERROR_SIZE];
 
     request = url + request;
+    cerr << "Making a request with URL " << request << endl;
 
     hnd = curl_easy_init();
     curl_easy_setopt(hnd, CURLOPT_URL, request.c_str());

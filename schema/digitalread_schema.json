@@ -3,7 +3,7 @@
 	"id": "AREST_digitalRead",
 	"type": "object",
 	"properties":{
-		"function":"digitalRead",
+		"function":{"type": "string", "enum":["digitalRead"]},
 		"pin":{"type":"number"},
 		"variable":{
 			"type":"string",

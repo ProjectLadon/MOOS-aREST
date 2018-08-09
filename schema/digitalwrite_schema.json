@@ -3,7 +3,7 @@
 	"id": "AREST_digitalWrite",
 	"type": "object",
 	"properties":{
-		"function":"digitalWrite",
+		"function":{"type": "string", "enum":["digitalWrite"]},
 		"pin":{"type":"number"},
 		"variable":{
 			"type":"string",

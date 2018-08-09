@@ -9,6 +9,11 @@
 #include "rapidjson/rapidjson.h"
 #include "rapidjson/document.h"
 #include "rapidjson/schema.h"
+#include "rapidjson/stringbuffer.h"
+#include "rapidjson/writer.h"
+#include "rapidjson/error/en.h"
+#include <iostream>
+#include <streambuf>
 #include <curl/curl.h>
 #include <memory>
 
@@ -17,8 +22,10 @@ using namespace rapidjson;
 using namespace RestItem;
 
 unique_ptr<FunctionParameter> FunctionParameter::functionParameterFactory (rapidjson::Value &d) {
+    //cerr << "Processing function parameter" << endl;
     if (d.IsObject() && d.HasMember("name") && d.HasMember("inputVariable") && d.HasMember("inputVariableType")) {
-        string mytype(d["interfaceType"].GetString(), d["interfaceType"].GetStringLength());
+        string mytype = d["inputVariableType"].GetString();
+        //cerr << "Creating function parameter of type " << mytype << endl;
         if (mytype == "DOUBLE") return unique_ptr<FunctionParameter>(new FunctionParameterDouble(d));
         if (mytype == "STRING") return unique_ptr<FunctionParameter>(new FunctionParameterString(d));
     }
@@ -84,23 +91,104 @@ bool FunctionParameterString::procMail(CMOOSMsg &msg) {
 
 /// @brief Generate a RestItem object of the type specified by the given JSON
 unique_ptr<RestItemBase> RestItemBase::restItemFactory(rapidjson::Value &d) {
-    if (d.Accept(Configuration::instance()->getDigitalReadSchemaValidator())) {
-        return unique_ptr<RestItemBase>(new DigitalRead(d));
+    if (d.IsObject() && d.HasMember("function") && d["function"].IsString()) {
+        //cerr << "Provided JSON member \"function\" is a string with value \"";
+        //cerr << d["function"].GetString() << "\"" << endl;
+    } else {
+        return unique_ptr<RestItemBase>();
     }
-    if (d.Accept(Configuration::instance()->getDigitalWriteSchemaValidator())) {
-        return unique_ptr<RestItemBase>(new DigitalWrite(d));
+    string funcName = d["function"].GetString();
+    //cerr << "Stored function name" << endl;
+
+    if (funcName == "digitalRead" &&
+        d.Accept(Configuration::instance()->getDigitalReadSchemaValidator())) {
+            //cerr << "Creating digitalRead" << endl;
+            return unique_ptr<RestItemBase>(new DigitalRead(d));
+    } else if (funcName == "digitalRead") {
+        cerr << "Failed to create digitalRead" << endl;
+        StringBuffer sb;
+        Configuration::instance()->getDigitalReadSchemaValidator().GetInvalidSchemaPointer().StringifyUriFragment(sb);
+        cerr << "Invalid configuration schema: " << sb.GetString() << endl;
+        cerr << "Invalid keyword: ";
+        cerr << Configuration::instance()->getDigitalReadSchemaValidator().GetInvalidSchemaKeyword() << endl;
+        sb.Clear();
+        Configuration::instance()->getDigitalReadSchemaValidator().GetInvalidDocumentPointer().StringifyUriFragment(sb);
+        cerr << "Invalid document: " << sb.GetString() << endl;
     }
-    if (d.Accept(Configuration::instance()->getAnalogReadSchemaValidator())) {
-        return unique_ptr<RestItemBase>(new AnalogRead(d));
+    if (funcName == "digitalWrite" &&
+        d.Accept(Configuration::instance()->getDigitalWriteSchemaValidator())) {
+            //cerr << "Creating digitalWrite" << endl;
+            return unique_ptr<RestItemBase>(new DigitalWrite(d));
+    } else if (funcName == "digitalWrite") {
+        cerr << "Failed to create digitalWrite" << endl;
+        StringBuffer sb;
+        Configuration::instance()->getDigitalWriteSchemaValidator().GetInvalidSchemaPointer().StringifyUriFragment(sb);
+        cerr << "Invalid configuration schema: " << sb.GetString() << endl;
+        cerr << "Invalid keyword: ";
+        cerr << Configuration::instance()->getDigitalWriteSchemaValidator().GetInvalidSchemaKeyword() << endl;
+        sb.Clear();
+        Configuration::instance()->getDigitalWriteSchemaValidator().GetInvalidDocumentPointer().StringifyUriFragment(sb);
+        cerr << "Invalid document: " << sb.GetString() << endl;
     }
-    if (d.Accept(Configuration::instance()->getAnalogWriteSchemaValidator())) {
-        return unique_ptr<RestItemBase>(new AnalogWrite(d));
+    if (funcName == "analogRead" &&
+        d.Accept(Configuration::instance()->getAnalogReadSchemaValidator())) {
+            //cerr << "Creating analogRead" << endl;
+            return unique_ptr<RestItemBase>(new AnalogRead(d));
+    } else if (funcName == "analogRead") {
+        cerr << "Failed to create analogRead" << endl;
+        StringBuffer sb;
+        Configuration::instance()->getAnalogReadSchemaValidator().GetInvalidSchemaPointer().StringifyUriFragment(sb);
+        cerr << "Invalid configuration schema: " << sb.GetString() << endl;
+        cerr << "Invalid keyword: ";
+        cerr << Configuration::instance()->getAnalogReadSchemaValidator().GetInvalidSchemaKeyword() << endl;
+        sb.Clear();
+        Configuration::instance()->getAnalogReadSchemaValidator().GetInvalidDocumentPointer().StringifyUriFragment(sb);
+        cerr << "Invalid document: " << sb.GetString() << endl;
     }
-    if (d.Accept(Configuration::instance()->getVariableSchemaValidator())) {
-        return unique_ptr<RestItemBase>(new Variable(d));
+    if (funcName == "analogWrite" &&
+        d.Accept(Configuration::instance()->getAnalogWriteSchemaValidator())) {
+            //cerr << "Creating analogWrite" << endl;
+            return unique_ptr<RestItemBase>(new AnalogWrite(d));
+    } else if (funcName == "analogWrite") {
+        cerr << "Failed to create analogWrite" << endl;
+        StringBuffer sb;
+        Configuration::instance()->getAnalogWriteSchemaValidator().GetInvalidSchemaPointer().StringifyUriFragment(sb);
+        cerr << "Invalid configuration schema: " << sb.GetString() << endl;
+        cerr << "Invalid keyword: ";
+        cerr << Configuration::instance()->getAnalogWriteSchemaValidator().GetInvalidSchemaKeyword() << endl;
+        sb.Clear();
+        Configuration::instance()->getAnalogWriteSchemaValidator().GetInvalidDocumentPointer().StringifyUriFragment(sb);
+        cerr << "Invalid document: " << sb.GetString() << endl;
     }
-    if (d.Accept(Configuration::instance()->getFunctionSchemaValidator())) {
-        return unique_ptr<RestItemBase>(new Function(d));
+    if (funcName == "variable" &&
+        d.Accept(Configuration::instance()->getVariableSchemaValidator())) {
+            //cerr << "Creating variable" << endl;
+            return unique_ptr<RestItemBase>(new Variable(d));
+    } else if (funcName == "variable") {
+        cerr << "Failed to create variable" << endl;
+        StringBuffer sb;
+        Configuration::instance()->getVariableSchemaValidator().GetInvalidSchemaPointer().StringifyUriFragment(sb);
+        cerr << "Invalid configuration schema: " << sb.GetString() << endl;
+        cerr << "Invalid keyword: ";
+        cerr << Configuration::instance()->getVariableSchemaValidator().GetInvalidSchemaKeyword() << endl;
+        sb.Clear();
+        Configuration::instance()->getVariableSchemaValidator().GetInvalidDocumentPointer().StringifyUriFragment(sb);
+        cerr << "Invalid document: " << sb.GetString() << endl;
+    }
+    if (funcName == "function" &&
+        d.Accept(Configuration::instance()->getFunctionSchemaValidator())) {
+            //cerr << "Creating function" << endl;
+            return unique_ptr<RestItemBase>(new Function(d));
+    } else if (funcName == "function") {
+        cerr << "Failed to create function" << endl;
+        StringBuffer sb;
+        Configuration::instance()->getFunctionSchemaValidator().GetInvalidSchemaPointer().StringifyUriFragment(sb);
+        cerr << "Invalid configuration schema: " << sb.GetString() << endl;
+        cerr << "Invalid keyword: ";
+        cerr << Configuration::instance()->getFunctionSchemaValidator().GetInvalidSchemaKeyword() << endl;
+        sb.Clear();
+        Configuration::instance()->getFunctionSchemaValidator().GetInvalidDocumentPointer().StringifyUriFragment(sb);
+        cerr << "Invalid document: " << sb.GetString() << endl;
     }
     return unique_ptr<RestItemBase>();
 }
@@ -392,10 +480,12 @@ Function::Function(rapidjson::Value &d) {
     mytype = "Function";
     name = d["name"].GetString();
     if (d.HasMember("returnName") && d.HasMember("returnType")) {
+        cerr << "Populating function return" << endl;
         returnName = d["returnName"].GetString();
         returnType = d["returnType"].GetString();
     }
     if (d.HasMember("parameters")) {
+        cerr << "Populating function parameters" << endl;
         for (auto& v : d["parameters"].GetArray()) {
             arguments.push_back(FunctionParameter::functionParameterFactory(v));
         }

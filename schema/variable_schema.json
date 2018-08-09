@@ -3,7 +3,7 @@
 	"id": "AREST_variable",
 	"type": "object",
 	"properties":{
-		"function":"variable",
+		"function":{"type":"string", "enum":["variable"]},
 		"name":{"type":"string"},
 		"variableType":{"type":"string","enum":["STRING","DOUBLE"]},
 		"variable":{

@@ -3,7 +3,7 @@
 	"id": "AREST_analogRead",
 	"type": "object",
 	"properties":{
-		"function":"analogRead",
+		"function":{"type": "string", "enum":["analogRead"]},
 		"pin":{"type":"number"},
 		"variable":{
 			"type":"string",
