@@ -3,7 +3,7 @@
 	"id": "AREST_function",
 	"type": "object",
 	"properties":{
-		"function":{"type":"string", "enum":["function"]},
+		"function":{"type": "string", "enum":["function"]},
 		"name":{"type":"string"},
 		"parameters":{
 			"type":"array",
@@ -12,7 +12,7 @@
 				"properties": {
 					"name": {"type":"string"},
 					"inputVariable": {"type":"string"},
-					"inputVariableType": {"type": "string", "enum":["DOUBLE", "STRING"]} 
+					"inputVariableType": {"type": "string", "enum":["DOUBLE", "STRING"]}
 				},
 				"required":["name", "inputVariable", "inputVariableType"]
 			}

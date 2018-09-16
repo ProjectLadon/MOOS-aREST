@@ -3,7 +3,8 @@
 	"id": "AREST_analogWrite",
 	"type": "object",
 	"properties":{
-		"function":{"type":"string", "enum":["analogWrite"]},
+		"function":{"type": "string", "enum":["analogWrite"]},
+		"pin":{"type":"number"},
 		"variable":{
 			"type":"string",
 			"$comment": "This must be an existing DOUBLE variable"

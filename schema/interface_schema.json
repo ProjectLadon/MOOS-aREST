@@ -5,7 +5,7 @@
 		{
 			"type":"object",
 			"properties": {
-				"interfaceType": {"type":"string", "enum":["serial"]},
+				"interfaceType": {"type": "string", "enum": ["serial"]},
 				"interface": {
 					"type":"string",
 					"pattern": "",
@@ -25,7 +25,7 @@
 		{
 			"type":"object",
 			"properties": {
-				"interfaceType": {"type":"string", "enum":["network"]},
+				"interfaceType": {"type": "string", "enum": ["network"]},
 				"url": {"type":"string", "format": "uri"},
 			},
 			"required":["interfaceType", "url"],

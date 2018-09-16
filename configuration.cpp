@@ -75,35 +75,25 @@ Configuration::Configuration () {
 
 bool Configuration::populate(std::string param, std::string value) {
     Document d;
-    cerr << "Processing parameter " << param << endl;
+    cerr << "Parsing " << param << "=" << value << endl;
     if ("DIGITALPOLLPERIOD" == param) {
-		digitalPollPeriod = atof(value.c_str());
-		if (digitalPollPeriod < 0) digitalPollPeriod = 0;
-		return true;
-	} else if ("ANALOGPOLLPERIOD" == param) {
-		analogPollPeriod = atof(value.c_str());
-		if (analogPollPeriod < 0) analogPollPeriod = 0;
-		return true;
-	} else if ("FUNCTIONPOLLPERIOD" == param) {
-		functionPollPeriod = atof(value.c_str());
-		if (functionPollPeriod < 0) functionPollPeriod = 0;
-		return true;
-	} else if ("VARIABLEPOLLPERIOD" == param) {
-		variablePollPeriod = atof(value.c_str());
-		if (variablePollPeriod < 0) variablePollPeriod = 0;
-		return true;
-	} else if ("CONFFILE" == param) {
-		return confFileReader(value);
-	} else if ("COMMSTICK" == param) {
-		return false;
-	} else if ("APPTICK" == param) {
-		return false;
-	}
-    if (d.Parse(value.c_str()).HasParseError()) {
-		cerr << "JSON parse error " << GetParseError_En(d.GetParseError());
-		cerr << " in " << param << " at offset " << d.GetErrorOffset() << endl;
-		cerr << value << endl;
-		return false;
+        digitalPollPeriod = atof(value.c_str());
+        if (digitalPollPeriod < 0) digitalPollPeriod = 0;
+    } else if ("ANALOGPOLLPERIOD" == param) {
+        analogPollPeriod = atof(value.c_str());
+        if (analogPollPeriod < 0) analogPollPeriod = 0;
+    } else if ("FUNCTIONPOLLPERIOD" == param) {
+        functionPollPeriod = atof(value.c_str());
+        if (functionPollPeriod < 0) functionPollPeriod = 0;
+    } else if ("VARIABLEPOLLPERIOD" == param) {
+        variablePollPeriod = atof(value.c_str());
+        if (variablePollPeriod < 0) variablePollPeriod = 0;
+    } else if ("CONFFILE" == param) {
+        return confFileReader(value);
+    } else if (d.Parse(value.c_str()).HasParseError()) {
+        cerr << "JSON parse error " << GetParseError_En(d.GetParseError());
+        cerr << " in " << param << " at offset " << d.GetErrorOffset() << endl;
+        return false;
     } else {
 		cerr << "Dispatching JSON object " << value << endl;
         return jsonDispatch(d);
@@ -190,14 +180,12 @@ bool Configuration::confFileReader(std::string filename) {
 }
 
 bool Configuration::jsonDispatch(rapidjson::Value &d) {
-	cerr << "Dispatching JSON" << endl;
-    if (d.Accept(Configuration::instance()->getInterfaceSchemaValidator()) &&
-		d.HasMember("interfaceType") && d["interfaceType"].IsString()) {
-		cerr << "Dispatching REST interface object" << endl;
+    if (d.IsObject() && d.HasMember("interfaceType") && d.Accept(*interfaceSchemaValidator)) {
+        cerr << "Dispatching interface" << endl;
         iface = RestInterface::restInterfaceFactory(d).release();
         if (iface) return true;
-    } else {
-		cerr << "Dispatching REST item object" << endl;
+    } else if (d.IsObject()) {
+        cerr << "Dispatching REST item" << endl;
         auto tmp = RestItemBase::restItemFactory(d);
         if (tmp) {
             pollList.push_back(move(tmp));
@@ -209,6 +197,8 @@ bool Configuration::jsonDispatch(rapidjson::Value &d) {
             cerr << "Failed to dispatch JSON :" << endl;
             cerr << "\t" << buf.GetString() << endl;
         }
+    } else {
+        cerr << "Provided JSON is not object and therefore not dispatchable" << endl;
     }
     return false;
 }
